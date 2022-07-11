@@ -87,7 +87,6 @@ namespace WpfApp
             if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 Employees = JsonConvert.DeserializeObject<List<Employee>>(response.Result.Content.ReadAsStringAsync().Result);
-                MessageBox.Show("Successfully load data!");
             }
 
         }

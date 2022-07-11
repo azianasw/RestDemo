@@ -4,104 +4,131 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
+        xmlns:views="clr-namespace:WpfApp.Views"
+        xmlns:vms="clr-namespace:WpfApp.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="MainGrid" Background="Gray">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        FontSize="14"
+        Title="MainWindow"
+        ResizeMode="NoResize"
+        MaxWidth="600">
+    <Grid x:Name="MainGrid"
+          Margin="20 10"
+          MaxWidth="600">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:AddEmployeeViewModel}">
+                <views:AddEmployeeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:EmployeeListingViewModel}">
+                <views:EmployeeListingView />
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ContentControl Content="{Binding CurrentViewModel}" />
+
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
-        <Grid x:Name="GridCreateNewEmployee">
+
+        <TextBlock Grid.Row="0"
+                   FontSize="22"
+                   Text="Add Employee"
+                   Margin="0 0 0 10" />
+        <Grid x:Name="GridCreateNewEmployee"
+              Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="LabelFullname"
-               Content="Fullname:"/>
-            <Label x:Name="LabelAddress"
-               Content="Address:"
-               Grid.Row="1"/>
-            <Label x:Name="LabelPosition"
-               Content="Position:"
-               Grid.Row="2"/>
 
             <TextBox x:Name="TextBoxFullname"
+                     materialDesign:HintAssist.Hint="Full name"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     VerticalAlignment="Center"
                      Text="{Binding Fullname}"
-                     Height="20"
-                     Width="150"
-                     Grid.Column="1"/>
+                     Width="255"
+                     Margin="0 0 0 5"
+                     Grid.Row="0" />
             <TextBox x:Name="TextBoxAddress"
+                     materialDesign:HintAssist.Hint="Address"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     VerticalAlignment="Center"
                      Text="{Binding Address}"
-                     Height="20"
-                     Width="150"
-                     Grid.Row="1"
-                     Grid.Column="1"/>
+                     Width="255"
+                     Margin="0 0 0 5"
+                     Grid.Row="1" />
             <TextBox x:Name="TextBoxPosition"
+                     materialDesign:HintAssist.Hint="Position"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     VerticalAlignment="Center"
                      Text="{Binding Position}"
-                     Height="20"
-                     Width="150"
-                     Grid.Row="2"
-                     Grid.Column="1"/>
+                     Width="255"
+                     Margin="0 0 0 5"
+                     Grid.Row="2" />
 
             <Button x:Name="ButtonAdd"
                     Click="ButtonAdd_Click"
                     Content="Add"
-                    Height="20"
-                    Width="100"
                     Margin="0 5 0 10"
                     Grid.Row="3"
-                    Grid.ColumnSpan="2"
-                    HorizontalAlignment="Right"
-                    />
+                    HorizontalAlignment="Right" />
         </Grid>
-
         <StackPanel x:Name="ButtonGetUpdateDelete"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Margin="0 10"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left">
+                    Orientation="Horizontal">
             <Button x:Name="ButtonGet"
                     Click="ButtonGet_Click"
-                    Height="20"
-                    Width="120"
-                    Content="Refresh Grid"/>
+                    Content="Refresh" />
             <Button x:Name="ButtonUpdate"
                     Click="ButtonUpdate_Click"
-                    Height="20"
-                    Width="120"
-                    Content="Update"/>
+                    Margin="10 0"
+                    Content="Update" />
             <Button x:Name="ButtonDelete"
                     Click="ButtonDelete_Click"
-                    Height="20"
-                    Width="120"
-                    Content="Delete"/>
-            
-        </StackPanel>
+                    Content="Delete" />
 
-        <DataGrid x:Name="ListEmployee" Grid.Row="2"
+        </StackPanel>
+        <DataGrid x:Name="ListEmployee"
                   ItemsSource="{Binding Employees}"
                   SelectedItem="{Binding Selected}"
+                  CanUserAddRows="False"
                   AutoGenerateColumns="False"
-                  Width="310"
-                  HorizontalAlignment="Left">
+                  HeadersVisibility="All"
+                  Grid.Row="3">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id"
-                                    Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Fullname"
-                                    Binding="{Binding Fullname}"/>
+                                    Binding="{Binding Id}"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                <DataGridTextColumn Header="Full name"
+                                    Binding="{Binding Fullname}"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 <DataGridTextColumn Header="Address"
-                                    Binding="{Binding Address}"/>
+                                    Binding="{Binding Address}"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 <DataGridTextColumn Header="Position"
-                                    Binding="{Binding Position}"/>
+                                    Binding="{Binding Position}"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>-->
     </Grid>
 </Window>

@@ -89,13 +89,11 @@ namespace WpfApp
 
                     return response;
                 }
-
             }
             catch (Exception)
             {
                 throw;
             }
-
         }
 
         public static Task<HttpResponseMessage> Delete(string url)
@@ -111,20 +109,17 @@ namespace WpfApp
                     client.Timeout = TimeSpan.FromSeconds(900);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    
+
                     var response = client.DeleteAsync(apiUrl);
                     response.Wait();
 
                     return response;
                 }
-
             }
             catch (Exception)
             {
                 throw;
             }
-
         }
-
     }
 }

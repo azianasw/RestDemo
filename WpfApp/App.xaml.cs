@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp.Store;
+using WpfApp.ViewModels;
 
 namespace WpfApp
 {
@@ -13,5 +15,34 @@ namespace WpfApp
     /// </summary>
     public partial class App : Application
     {
+        private readonly NavigationStore _navigationStore;
+
+        public App()
+        {
+            _navigationStore = new NavigationStore();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            _navigationStore.CurrentViewModel = CreateEmployeeListingViewModel();
+
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainViewModel(_navigationStore)
+            };
+            MainWindow.Show();
+
+            base.OnStartup(e);
+        }
+
+        private AddEmployeeViewModel CreateAddEmployeeViewModel()
+        {
+            return new AddEmployeeViewModel(_navigationStore, CreateEmployeeListingViewModel);
+        }
+
+        private EmployeeListingViewModel CreateEmployeeListingViewModel()
+        {
+            return new EmployeeListingViewModel(_navigationStore, CreateAddEmployeeViewModel);
+        }
     }
 }
