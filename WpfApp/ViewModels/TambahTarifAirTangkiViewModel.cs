@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using WpfApp.Commands;
 using WpfApp.Models;
 
 namespace WpfApp.ViewModels
 {
-    public class TambahTarifAirTangkiViewModel : ViewModelBase
+    public class TambahTarifAirTangkiViewModel : ViewModelBase, INotifyDataErrorInfo
     {
         public List<Kategori> Kategori { get; }
         public TATViewmModel SelectedTat { get; }
@@ -20,6 +21,13 @@ namespace WpfApp.ViewModels
             set
             {
                 _biayaAir = value;
+
+                _errorViewModel.ClearErrors(nameof(BiayaAir));
+                if (_biayaAir < 0)
+                {
+                    _errorViewModel.AddError(nameof(BiayaAir), "Tidak boleh minus");
+                }
+
                 OnPropertyChanged(nameof(BiayaAir));
             }
         }
@@ -46,6 +54,14 @@ namespace WpfApp.ViewModels
 
         public bool IsEdit { get; }
 
+        private readonly ErrorsViewModel _errorViewModel;
+
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public bool HasErrors => _errorViewModel.HasErrors;
+
+        public bool IsValid => !HasErrors;
+
         public ICommand SubmitCommand { get; }
 
         public TambahTarifAirTangkiViewModel(List<Kategori> kategori, TATViewmModel selectedTat = null, string title = "Tambah Tarif Air Tangki", bool isEdit = false)
@@ -54,10 +70,18 @@ namespace WpfApp.ViewModels
             SelectedTat = selectedTat;
             Title = title;
             IsEdit = isEdit;
+            _errorViewModel = new ErrorsViewModel();
+            _errorViewModel.ErrorsChanged += ErrorViewModel_ErrorsChanged;
 
             PrepareEditForm();
 
             SubmitCommand = new SubmitTarifAirTangkiCommand(this);
+        }
+
+        private void ErrorViewModel_ErrorsChanged(object sender, DataErrorsChangedEventArgs e)
+        {
+            ErrorsChanged?.Invoke(this, e);
+            OnPropertyChanged(nameof(IsValid));
         }
 
         private void PrepareEditForm()
@@ -67,6 +91,11 @@ namespace WpfApp.ViewModels
                 BiayaAir = SelectedTat.BiayaAir;
                 Selected = Kategori.FirstOrDefault(_ => SelectedTat.KategoriTarif.Contains(_.KategoriTarif));
             }
+        }
+
+        public IEnumerable GetErrors(string propertyName)
+        {
+            return _errorViewModel.GetErrors(propertyName);
         }
     }
 }
