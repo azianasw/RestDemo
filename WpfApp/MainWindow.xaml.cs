@@ -70,7 +70,7 @@ namespace WpfApp
                 Position = Position
             };
 
-            var created = WebApi.Post<Employee>(Url, newEmployee);
+            var created = WebApi.PostAsync<Employee>(Url, newEmployee);
             if (created.Result.StatusCode == System.Net.HttpStatusCode.Created)
             {
                 MessageBox.Show($"{newEmployee.Fullname}'s details has successfully been added!");
@@ -83,7 +83,7 @@ namespace WpfApp
 
         private void ButtonGet_Click(object sender, RoutedEventArgs e)
         {
-            var response = WebApi.Get(Url);
+            var response = WebApi.GetAsync(Url);
             if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 Employees = JsonConvert.DeserializeObject<List<Employee>>(response.Result.Content.ReadAsStringAsync().Result);
@@ -93,7 +93,7 @@ namespace WpfApp
 
         private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
         {
-            var response = WebApi.Put<Employee>($"{Url}/{Selected.Id}", Selected);
+            var response = WebApi.PutAsync<Employee>($"{Url}/{Selected.Id}", Selected);
             if (response.Result.StatusCode == System.Net.HttpStatusCode.NoContent)
             {
                 MessageBox.Show($"{Selected.Fullname}'s details has successfully been updated!");
@@ -106,7 +106,7 @@ namespace WpfApp
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
-            var response = WebApi.Delete($"{Url}/{Selected.Id}");
+            var response = WebApi.DeleteAsync($"{Url}/{Selected.Id}");
             if (response.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 MessageBox.Show($"{Selected.Fullname}'s details has successfully been deleted!");

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace WpfApp.Commands
@@ -14,7 +15,30 @@ namespace WpfApp.Commands
             return true;
         }
 
-        public abstract void Execute(object parameter);
+        private bool _isExecuting;
+        public bool IsExecuting
+        {
+            get
+            {
+                return _isExecuting;
+            }
+            set
+            {
+                _isExecuting = value;
+                CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        public void Execute(object parameter)
+        {
+            IsExecuting = true;
+
+            _ = ExecuteAsync(parameter);
+
+            IsExecuting = false;
+        }
+
+        public abstract Task ExecuteAsync(object parameter);
 
         protected void CanExecutedChanged()
         {

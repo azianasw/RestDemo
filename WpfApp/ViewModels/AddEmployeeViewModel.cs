@@ -50,5 +50,10 @@ namespace WpfApp.ViewModels
 
             MessageQueue = new SnackbarMessageQueue();
         }
+
+        public AddEmployeeViewModel()
+        {
+            SubmitCommand = new AddEmployeeCommand(this);
+        }
     }
 }

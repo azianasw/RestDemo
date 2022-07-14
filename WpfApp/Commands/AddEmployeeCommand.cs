@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfApp.ViewModels;
 
 namespace WpfApp.Commands
@@ -15,20 +17,26 @@ namespace WpfApp.Commands
             _addEmployeeViewModel = addEmployeeViewModel;
         }
 
-        public override void Execute(object parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
-            var newEmployee = new Employee()
+            try
             {
-                Fullname = _addEmployeeViewModel.Fullname,
-                Address = _addEmployeeViewModel.Address,
-                Position = _addEmployeeViewModel.Position
-            };
+                Employee newEmployee = new Employee()
+                {
+                    Fullname = _addEmployeeViewModel.Fullname,
+                    Address = _addEmployeeViewModel.Address,
+                    Position = _addEmployeeViewModel.Position
+                };
 
-            var resp = WebApi.Post("employees", newEmployee);
+                HttpResponseMessage resp = await WebApi.PostAsync("employees", newEmployee);
 
-            if (resp.Result.StatusCode == System.Net.HttpStatusCode.Created)
+                if (resp.StatusCode == System.Net.HttpStatusCode.Created)
+                {
+                    _ = MessageBox.Show("Data berhasil ditambahkan", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception)
             {
-                _addEmployeeViewModel.MessageQueue.Enqueue($"{newEmployee.Fullname}'s details has successfully been added!");
             }
         }
     }

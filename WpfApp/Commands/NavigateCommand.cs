@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using WpfApp.Store;
 using WpfApp.ViewModels;
 
@@ -17,9 +18,10 @@ namespace WpfApp.Commands
             _createViewModel = createViewModel;
         }
 
-        public override void Execute(object parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
             _navigationStore.CurrentViewModel = _createViewModel();
+            await Task.FromResult(true);
         }
     }
 }

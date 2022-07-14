@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using WpfApp.ViewModels;
 
 namespace WpfApp.Commands
@@ -16,15 +17,16 @@ namespace WpfApp.Commands
             _employeeListingViewModel = employeeListingViewModel;
         }
 
-        public override void Execute(object parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
-            var employees = WebApi.Get("employees");
+            var employees = WebApi.GetAsync("employees");
             if (employees.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 _employeeListingViewModel.Employees = JsonConvert.DeserializeObject<List<Employee>>(
                     employees.Result.Content.ReadAsStringAsync().Result)
                     .Select(e => new EmployeeViewModel(e)).ToList();
             }
+            await Task.FromResult(true);
         }
     }
 }

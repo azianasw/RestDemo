@@ -21,6 +21,7 @@ namespace RestDemo.Data
         }
 
         public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Kategori> Kategori { get; set; }
 
 //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 //        {
@@ -67,5 +68,7 @@ namespace RestDemo.Data
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<RestDemo.Models.TarifAirTangki> TarifAirTangki { get; set; }
     }
 }

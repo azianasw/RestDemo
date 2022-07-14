@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using WpfApp.ViewModels;
 
 namespace WpfApp.Commands
@@ -14,13 +15,13 @@ namespace WpfApp.Commands
             _employeeListingViewModel = employeeListingViewModel;
         }
 
-        public override void Execute(object parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
-            var resp = WebApi.Delete($"employees/{_employeeListingViewModel.Selected.Id}");
-            if (resp.Result.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                _employeeListingViewModel.MessageQueue.Enqueue($"{_employeeListingViewModel.Selected.Fullname}'s details has successfully been deleted!");
-            }
+            await WebApi.DeleteAsync($"employees/{_employeeListingViewModel.Selected.Id}");
+            //if (resp.Result.StatusCode == System.Net.HttpStatusCode.OK)
+            //{
+            //    _employeeListingViewModel.MessageQueue.Enqueue($"{_employeeListingViewModel.Selected.Fullname}'s details has successfully been deleted!");
+            //}
         }
     }
 }

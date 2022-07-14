@@ -15,14 +15,14 @@ using WpfApp.ViewModels;
 namespace WpfApp.Views
 {
     /// <summary>
-    /// Interaction logic for AddEmployeeView.xaml
+    /// Interaction logic for TambahTarifAirTangkiView.xaml
     /// </summary>
-    public partial class AddEmployeeView : UserControl
+    public partial class TambahTarifAirTangkiView : UserControl
     {
-        public AddEmployeeView(AddEmployeeViewModel addEmployeeViewModel)
+        public TambahTarifAirTangkiView(TambahTarifAirTangkiViewModel tambahTarifAirTangkiViewModel)
         {
             InitializeComponent();
-            DataContext = addEmployeeViewModel;
+            DataContext = tambahTarifAirTangkiViewModel;
         }
     }
 }

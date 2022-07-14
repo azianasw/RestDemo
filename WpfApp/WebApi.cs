@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace WpfApp
 {
-    class WebApi
+    public class WebApi
     {
         private static readonly string _baseUri = "https://localhost:44380/api/";
 
-        public static Task<HttpResponseMessage> Get(string url)
+        public static async Task<HttpResponseMessage> GetAsync(string url)
         {
             try
             {
@@ -26,10 +26,7 @@ namespace WpfApp
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                    var response = client.GetAsync(apiUrl);
-                    response.Wait();
-
-                    return response;
+                    return await client.GetAsync(apiUrl);
                 }
             }
             catch (Exception)
@@ -38,57 +35,22 @@ namespace WpfApp
             }
         }
 
-        public static Task<HttpResponseMessage> Post<T>(string url, T model) where T : class
+        public static async Task<HttpResponseMessage> PostAsync<T>(string url, T model) where T : class
         {
             try
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 string apiUrl = _baseUri + url;
 
-                using (HttpClient client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(apiUrl);
-                    client.Timeout = TimeSpan.FromSeconds(900);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                using HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(apiUrl);
+                client.Timeout = TimeSpan.FromSeconds(900);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                    var content = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
+                StringContent content = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
 
-                    var response = client.PostAsync(apiUrl, content);
-                    response.Wait();
-
-                    return response;
-                }
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-        }
-
-        public static Task<HttpResponseMessage> Put<T>(string url, T model) where T : class
-        {
-            try
-            {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                string apiUrl = _baseUri + url;
-
-                using (HttpClient client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(apiUrl);
-                    client.Timeout = TimeSpan.FromSeconds(900);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
-                    var content = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
-
-                    var response = client.PutAsync(apiUrl, content);
-                    response.Wait();
-
-                    return response;
-                }
+                return await client.PostAsync(apiUrl, content);
             }
             catch (Exception)
             {
@@ -96,25 +58,43 @@ namespace WpfApp
             }
         }
 
-        public static Task<HttpResponseMessage> Delete(string url)
+        public static async Task<HttpResponseMessage> PutAsync<T>(string url, T model) where T : class
         {
             try
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 string apiUrl = _baseUri + url;
 
-                using (HttpClient client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(apiUrl);
-                    client.Timeout = TimeSpan.FromSeconds(900);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                using HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(apiUrl);
+                client.Timeout = TimeSpan.FromSeconds(900);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                    var response = client.DeleteAsync(apiUrl);
-                    response.Wait();
+                StringContent content = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
 
-                    return response;
-                }
+                return await client.PutAsync(apiUrl, content);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static async Task<HttpResponseMessage> DeleteAsync(string url)
+        {
+            try
+            {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                string apiUrl = _baseUri + url;
+
+                using HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(apiUrl);
+                client.Timeout = TimeSpan.FromSeconds(900);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                return await client.DeleteAsync(apiUrl);
             }
             catch (Exception)
             {

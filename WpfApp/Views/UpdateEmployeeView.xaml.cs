@@ -15,14 +15,14 @@ using WpfApp.ViewModels;
 namespace WpfApp.Views
 {
     /// <summary>
-    /// Interaction logic for AddEmployeeView.xaml
+    /// Interaction logic for UpdateEmployeeView.xaml
     /// </summary>
-    public partial class AddEmployeeView : UserControl
+    public partial class UpdateEmployeeView : UserControl
     {
-        public AddEmployeeView(AddEmployeeViewModel addEmployeeViewModel)
+        public UpdateEmployeeView(UpdateEmployeeViewModel updateEmployeeViewModel)
         {
             InitializeComponent();
-            DataContext = addEmployeeViewModel;
+            DataContext = updateEmployeeViewModel;
         }
     }
 }

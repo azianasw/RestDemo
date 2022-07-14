@@ -24,7 +24,8 @@ namespace WpfApp
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            _navigationStore.CurrentViewModel = CreateEmployeeListingViewModel();
+            //_navigationStore.CurrentViewModel = CreateEmployeeListingViewModel();
+            _navigationStore.CurrentViewModel = new TarifAirTangkiViewModel();
 
             MainWindow = new MainWindow()
             {
@@ -33,16 +34,6 @@ namespace WpfApp
             MainWindow.Show();
 
             base.OnStartup(e);
-        }
-
-        private AddEmployeeViewModel CreateAddEmployeeViewModel()
-        {
-            return new AddEmployeeViewModel(_navigationStore, CreateEmployeeListingViewModel);
-        }
-
-        private EmployeeListingViewModel CreateEmployeeListingViewModel()
-        {
-            return new EmployeeListingViewModel(_navigationStore, CreateAddEmployeeViewModel);
         }
     }
 }

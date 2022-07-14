@@ -10,19 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp.ViewModels;
 
 namespace WpfApp.Views
 {
     /// <summary>
-    /// Interaction logic for AddEmployeeView.xaml
+    /// Interaction logic for TarifAirTangkiView.xaml
     /// </summary>
-    public partial class AddEmployeeView : UserControl
+    public partial class TarifAirTangkiView : UserControl
     {
-        public AddEmployeeView(AddEmployeeViewModel addEmployeeViewModel)
+        public TarifAirTangkiView()
         {
             InitializeComponent();
-            DataContext = addEmployeeViewModel;
         }
     }
 }
