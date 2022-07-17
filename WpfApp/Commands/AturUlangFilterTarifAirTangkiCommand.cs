@@ -17,12 +17,8 @@ namespace WpfApp.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            _tarifAirTangkiViewModel.KodeTarifChecked = false;
-            _tarifAirTangkiViewModel.KodeTarif = null;
-            _tarifAirTangkiViewModel.NamaTarifChecked = false;
-            _tarifAirTangkiViewModel.NamaTarif = null;
-
-            _ = await Task.FromResult(false);
+            _tarifAirTangkiViewModel.ResetFilters();
+            _ = await Task.FromResult(true);
         }
     }
 }

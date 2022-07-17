@@ -3,41 +3,47 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using WpfApp.Commands;
+using WpfApp.Models;
 
 namespace WpfApp.ViewModels
 {
     public class TarifAirTangkiViewModel : ViewModelBase
     {
-        private List<EmployeeViewModel> _employees;
-        public List<EmployeeViewModel> Employees
+        private List<TATViewmModel> _tarifAirTangki;
+        public List<TATViewmModel> TarifAirTangki
         {
-            get => _employees;
+            get => _tarifAirTangki;
             set
             {
-                _employees = value;
-                OnPropertyChanged(nameof(Employees));
+                _tarifAirTangki = value;
+                OnPropertyChanged(nameof(TarifAirTangki));
+                UpdateTotalRecord();
             }
         }
-        private EmployeeViewModel _selected;
-        public EmployeeViewModel Selected
+
+        private void UpdateTotalRecord()
         {
-            get => _selected;
-            set
-            {
-                _selected = value;
-                OnPropertyChanged(nameof(Selected));
-            }
+            TotalRecord = TarifAirTangki.Count;
         }
-        private List<TATViewmModel> _tats;
-        public List<TATViewmModel> Tats
+
+        public void ResetFilters()
         {
-            get => _tats;
-            set
-            {
-                _tats = value;
-                OnPropertyChanged(nameof(Tats));
-            }
+            KodeTarifChecked = false;
+            NamaTarifChecked = false;
+            KodeTarif = string.Empty;
+            NamaTarif = string.Empty;
         }
+
+        public string GetFilters()
+        {
+            string filters = string.Empty;
+
+            filters += !string.IsNullOrEmpty(KodeTarif) && KodeTarifChecked ? $"kodeTarif={KodeTarif}" : "kodeTarif";
+            filters += !string.IsNullOrEmpty(NamaTarif) && NamaTarifChecked ? $"&namaTarif={NamaTarif}" : "&namaTarif";
+
+            return filters;
+        }
+
         private TATViewmModel _selectedTat;
         public TATViewmModel SelectedTat
         {
@@ -48,17 +54,7 @@ namespace WpfApp.ViewModels
                 OnPropertyChanged(nameof(SelectedTat));
             }
         }
-        private bool _noRecord = true;
-        public bool NoRecord
-        {
-            get => _noRecord;
-            set
-            {
-                _noRecord = value;
-                OnPropertyChanged(nameof(NoRecord));
-            }
-        }
-        private long _totalRecord = 0;
+        private long _totalRecord;
         public long TotalRecord
         {
             get => _totalRecord;

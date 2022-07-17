@@ -19,15 +19,13 @@ namespace WpfApp
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 string apiUrl = _baseUri + url;
 
-                using (HttpClient client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(apiUrl);
-                    client.Timeout = TimeSpan.FromSeconds(900);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                using HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(apiUrl);
+                client.Timeout = TimeSpan.FromSeconds(900);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                    return await client.GetAsync(apiUrl);
-                }
+                return await client.GetAsync(apiUrl);
             }
             catch (Exception)
             {

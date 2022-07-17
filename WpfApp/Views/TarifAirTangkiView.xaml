@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WpfApp.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:converter="clr-namespace:WpfApp.Converter"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextElement.FontWeight="Regular"
              TextElement.FontSize="13"
@@ -15,6 +16,9 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
+    <UserControl.Resources>
+        <converter:TidakAdaDataConverter x:Key="TidakAdaDataConverter" />
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
@@ -130,7 +134,7 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid ItemsSource="{Binding Tats, UpdateSourceTrigger=PropertyChanged}"
+                <DataGrid ItemsSource="{Binding TarifAirTangki, UpdateSourceTrigger=PropertyChanged}"
                           SelectedItem="{Binding SelectedTat, UpdateSourceTrigger=PropertyChanged}"
                           AutoGenerateColumns="False"
                           IsReadOnly="True"
@@ -156,26 +160,6 @@
                                             Binding="{Binding NamaTarif, UpdateSourceTrigger=PropertyChanged}" />
                         <DataGridTextColumn Header="BIAYA AIR"
                                             Binding="{Binding BiayaAir, UpdateSourceTrigger=PropertyChanged}" />
-                        <!--<DataGridTextColumn Header="BIAYA ADMIN" />
-                        <DataGridTextColumn Header="BIAYA OPERASIONAL" />
-                        <DataGridTextColumn Header="BIAYA TRANSPORT" />
-                        <DataGridTextColumn Header="PPN (%)" />
-                        <DataGridTextColumn Header="BB 1 (KM)" />
-                        <DataGridTextColumn Header="BA 1 (KM)" />
-                        <DataGridTextColumn Header="TARIF 1 (KM)" />
-                        <DataGridTextColumn Header="BB 2 (KM)" />
-                        <DataGridTextColumn Header="BA 2 (KM)" />
-                        <DataGridTextColumn Header="TARIF 2 (KM)" />
-                        <DataGridTextColumn Header="BB 3 (KM)" />
-                        <DataGridTextColumn Header="BA 3 (KM)" />
-                        <DataGridTextColumn Header="TARIF 3 (KM)" />
-                        <DataGridTextColumn Header="BB 4 (KM)" />
-                        <DataGridTextColumn Header="BA 4 (KM)" />
-                        <DataGridTextColumn Header="TARIF 4 (KM)" />
-                        <DataGridTextColumn Header="BB 5 (KM)" />
-                        <DataGridTextColumn Header="BA 5 (KM)" />
-                        <DataGridTextColumn Header="TARIF 5 (KM)" />-->
-
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -185,8 +169,8 @@
                 <Grid.Style>
                     <Style TargetType="Grid">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding NoRecord, UpdateSourceTrigger=PropertyChanged}"
-                                         Value="False">
+                            <DataTrigger Binding="{Binding TotalRecord, Converter={StaticResource TidakAdaDataConverter}}">
+                                <DataTrigger.Value>false</DataTrigger.Value>
                                 <Setter Property="Visibility"
                                         Value="Hidden" />
                             </DataTrigger>

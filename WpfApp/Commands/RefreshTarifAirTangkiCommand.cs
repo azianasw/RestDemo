@@ -12,7 +12,7 @@ namespace WpfApp.Commands
 {
     public class RefreshTarifAirTangkiCommand : CommandBase
     {
-        private TarifAirTangkiViewModel _tarifAirTangkiViewModel;
+        private readonly TarifAirTangkiViewModel _tarifAirTangkiViewModel;
 
         public RefreshTarifAirTangkiCommand(TarifAirTangkiViewModel tarifAirTangkiViewModel)
         {
@@ -23,21 +23,15 @@ namespace WpfApp.Commands
         {
             try
             {
-                string endpoint = "tarifAirTangki?";
-
-                endpoint += !string.IsNullOrEmpty(_tarifAirTangkiViewModel.KodeTarif) ? $"kodeTarif={_tarifAirTangkiViewModel.KodeTarif}" : "kodeTarif";
-                endpoint += !string.IsNullOrEmpty(_tarifAirTangkiViewModel.NamaTarif) ? $"&namaTarif={_tarifAirTangkiViewModel.NamaTarif}" : "&namaTarif";
+                string endpoint = $"tarifAirTangki?{_tarifAirTangkiViewModel.GetFilters()}";
 
                 HttpResponseMessage resp = await WebApi.GetAsync(endpoint);
 
                 if (resp.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    _tarifAirTangkiViewModel.Tats = JsonConvert.DeserializeObject<List<TarifAirTangki>>(
+                    _tarifAirTangkiViewModel.TarifAirTangki = JsonConvert.DeserializeObject<List<TarifAirTangki>>(
                             resp.Content.ReadAsStringAsync().Result)
-                            .Select(_ => new TATViewmModel(_.Id, _.Kategori.KategoriTarif, _.Kategori.NamaTarif, _.BiayaAir)).ToList();
-
-                    _tarifAirTangkiViewModel.NoRecord = false;
-                    _tarifAirTangkiViewModel.TotalRecord = _tarifAirTangkiViewModel.Tats.Count;
+                            .Select(_ => new TATViewmModel { Id = _.Id, KategoriTarif = _.Kategori.KategoriTarif, NamaTarif = _.Kategori.NamaTarif, BiayaAir = _.BiayaAir }).ToList();
                 }
 
             }

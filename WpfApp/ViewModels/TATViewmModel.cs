@@ -10,13 +10,5 @@ namespace WpfApp.ViewModels
         public string KategoriTarif { get; set; }
         public string NamaTarif { get; set; }
         public long BiayaAir { get; set; }
-
-        public TATViewmModel(long id, string kategoriTarif, string namaTarif, long biayaAir)
-        {
-            Id = id;
-            KategoriTarif = kategoriTarif;
-            NamaTarif = namaTarif;
-            BiayaAir = biayaAir;
-        }
     }
 }

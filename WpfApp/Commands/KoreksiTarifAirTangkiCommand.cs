@@ -21,15 +21,15 @@ namespace WpfApp.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            Employee employeeToUpdate = new Employee
-            {
-                Id = _tarifAirTangkiViewModel.Selected.Id,
-                Fullname = _tarifAirTangkiViewModel.Selected.Fullname,
-                Address = _tarifAirTangkiViewModel.Selected.Address,
-                Position = _tarifAirTangkiViewModel.Selected.Position
-            };
+            //Employee employeeToUpdate = new Employee
+            //{
+            //    Id = _tarifAirTangkiViewModel.Selected.Id,
+            //    Fullname = _tarifAirTangkiViewModel.Selected.Fullname,
+            //    Address = _tarifAirTangkiViewModel.Selected.Address,
+            //    Position = _tarifAirTangkiViewModel.Selected.Position
+            //};
 
-            _ = await DialogHost.Show(new UpdateEmployeeView(new UpdateEmployeeViewModel(employeeToUpdate)), "DialogHost");
+            //_ = await DialogHost.Show(new UpdateEmployeeView(new UpdateEmployeeViewModel(employeeToUpdate)), "DialogHost");
         }
     }
 }
