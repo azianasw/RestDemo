@@ -19,8 +19,8 @@ namespace WpfApp.Commands
             _tarifAirTangkiViewModel.Kategori = await _tarifAirTangkiViewModel.RestApi.GetKategoriAsync("kategori");
 
             _ = bool.TryParse((string)parameter, out bool isEdit)
-                ? await DialogHost.Show(new TambahTarifAirTangkiView(new TambahTarifAirTangkiViewModel(_tarifAirTangkiViewModel.Kategori, _tarifAirTangkiViewModel.SelectedTat, "Koreksi Tarif Air Tangki", isEdit)), "DialogHost")
-                : await DialogHost.Show(new TambahTarifAirTangkiView(new TambahTarifAirTangkiViewModel(_tarifAirTangkiViewModel.Kategori)), "DialogHost");
+                ? await DialogHost.Show(new TambahTarifAirTangkiView(new TambahTarifAirTangkiViewModel(_tarifAirTangkiViewModel.RestApi, _tarifAirTangkiViewModel.Kategori, _tarifAirTangkiViewModel.SelectedTat, "Koreksi Tarif Air Tangki", isEdit)), "DialogHost")
+                : await DialogHost.Show(new TambahTarifAirTangkiView(new TambahTarifAirTangkiViewModel(_tarifAirTangkiViewModel.RestApi, _tarifAirTangkiViewModel.Kategori)), "DialogHost");
         }
     }
 }

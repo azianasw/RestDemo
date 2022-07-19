@@ -9,5 +9,7 @@ namespace WpfApp
     {
         Task<List<TatViewModel>> GetAsync(string uri);
         Task<List<Kategori>> GetKategoriAsync(string uri);
+        Task PutAsync(string uri, TarifAirTangki updateTat);
+        Task PostAsync(string uri, TarifAirTangki newTat);
     }
 }

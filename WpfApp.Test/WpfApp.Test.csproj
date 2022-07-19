@@ -18,4 +18,8 @@
     <ProjectReference Include="..\WpfApp\WpfApp.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
+
 </Project>

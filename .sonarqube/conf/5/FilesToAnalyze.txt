@@ -1,5 +1,4 @@
-﻿D:\repos\RestDemo\WpfApp.Test\Commands\TambahTarifAirTangkiCommandTest.cs
-D:\repos\RestDemo\WpfApp.Test\Converter\TidakAdaDataConverterUnitTest.cs
+﻿D:\repos\RestDemo\WpfApp.Test\Converter\TidakAdaDataConverterUnitTest.cs
 D:\repos\RestDemo\WpfApp.Test\ViewModel\TambahTarifAirTangkiViewModelTest.cs
 D:\repos\RestDemo\WpfApp.Test\ViewModel\TarifAirTangkiViewModelUnitTest.cs
 C:\Users\BSA\.nuget\packages\microsoft.net.test.sdk\16.5.0\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs

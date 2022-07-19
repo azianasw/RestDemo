@@ -4,31 +4,24 @@
     <lineToCover lineNumber="1" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\App.xaml.cs">
+    <lineToCover lineNumber="14" covered="false" />
+    <lineToCover lineNumber="15" covered="false" />
+    <lineToCover lineNumber="16" covered="false" />
+    <lineToCover lineNumber="17" covered="false" />
     <lineToCover lineNumber="20" covered="false" />
-    <lineToCover lineNumber="21" covered="false" />
     <lineToCover lineNumber="22" covered="false" />
-    <lineToCover lineNumber="23" covered="false" />
     <lineToCover lineNumber="24" covered="false" />
+    <lineToCover lineNumber="25" covered="false" />
     <lineToCover lineNumber="26" covered="false" />
     <lineToCover lineNumber="27" covered="false" />
     <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="29" covered="false" />
     <lineToCover lineNumber="30" covered="false" />
     <lineToCover lineNumber="31" covered="false" />
-    <lineToCover lineNumber="32" covered="false" />
-    <lineToCover lineNumber="33" covered="false" />
-    <lineToCover lineNumber="34" covered="false" />
-    <lineToCover lineNumber="35" covered="false" />
-    <lineToCover lineNumber="36" covered="false" />
-    <lineToCover lineNumber="37" covered="false" />
-    <lineToCover lineNumber="38" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\App.g.cs">
-    <lineToCover lineNumber="50" covered="false" />
-    <lineToCover lineNumber="51" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="51" covered="false" />
     <lineToCover lineNumber="52" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="53" covered="false" />
-    <lineToCover lineNumber="54" covered="false" />
     <lineToCover lineNumber="55" covered="false" />
     <lineToCover lineNumber="56" covered="false" />
   </file>
@@ -141,19 +134,14 @@
     <lineToCover lineNumber="30" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Commands\RefreshTarifAirTangkiCommand.cs">
-    <lineToCover lineNumber="17" covered="true" />
     <lineToCover lineNumber="18" covered="true" />
     <lineToCover lineNumber="19" covered="true" />
     <lineToCover lineNumber="20" covered="true" />
     <lineToCover lineNumber="21" covered="true" />
-    <lineToCover lineNumber="23" covered="true" branchesToCover="2" coveredBranches="1" />
-    <lineToCover lineNumber="24" covered="true" branchesToCover="2" coveredBranches="1" />
+    <lineToCover lineNumber="24" covered="true" />
     <lineToCover lineNumber="25" covered="true" />
-    <lineToCover lineNumber="26" covered="true" />
     <lineToCover lineNumber="27" covered="true" />
     <lineToCover lineNumber="28" covered="true" />
-    <lineToCover lineNumber="29" covered="true" />
-    <lineToCover lineNumber="30" covered="true" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Commands\SaveUpdateEmployeeCommand.cs">
     <lineToCover lineNumber="15" covered="false" />
@@ -185,49 +173,40 @@
     <lineToCover lineNumber="17" covered="true" />
     <lineToCover lineNumber="18" covered="true" />
     <lineToCover lineNumber="19" covered="true" />
-    <lineToCover lineNumber="22" covered="false" branchesToCover="4" coveredBranches="0" />
-    <lineToCover lineNumber="24" covered="false" />
-    <lineToCover lineNumber="25" covered="false" branchesToCover="2" coveredBranches="0" />
-    <lineToCover lineNumber="26" covered="false" />
-    <lineToCover lineNumber="27" covered="false" />
-    <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="29" covered="false" />
-    <lineToCover lineNumber="30" covered="false" />
-    <lineToCover lineNumber="31" covered="false" />
-    <lineToCover lineNumber="32" covered="false" />
-    <lineToCover lineNumber="34" covered="false" />
-    <lineToCover lineNumber="35" covered="false" branchesToCover="2" coveredBranches="0" />
-    <lineToCover lineNumber="36" covered="false" />
-    <lineToCover lineNumber="37" covered="false" />
-    <lineToCover lineNumber="38" covered="false" />
-    <lineToCover lineNumber="39" covered="false" />
-    <lineToCover lineNumber="41" covered="false" />
-    <lineToCover lineNumber="42" covered="false" />
-    <lineToCover lineNumber="43" covered="false" />
-    <lineToCover lineNumber="44" covered="false" branchesToCover="2" coveredBranches="0" />
-    <lineToCover lineNumber="45" covered="false" />
-    <lineToCover lineNumber="46" covered="false" />
-    <lineToCover lineNumber="47" covered="false" />
-    <lineToCover lineNumber="48" covered="false" />
-    <lineToCover lineNumber="49" covered="false" />
-    <lineToCover lineNumber="50" covered="false" />
-    <lineToCover lineNumber="51" covered="false" />
-    <lineToCover lineNumber="52" covered="false" />
-    <lineToCover lineNumber="54" covered="false" />
+    <lineToCover lineNumber="22" covered="true" branchesToCover="2" coveredBranches="1" />
+    <lineToCover lineNumber="23" covered="true" branchesToCover="2" coveredBranches="2" />
+    <lineToCover lineNumber="24" covered="true" />
+    <lineToCover lineNumber="25" covered="true" />
+    <lineToCover lineNumber="26" covered="true" />
+    <lineToCover lineNumber="27" covered="true" />
+    <lineToCover lineNumber="28" covered="true" />
+    <lineToCover lineNumber="29" covered="true" />
+    <lineToCover lineNumber="30" covered="true" />
+    <lineToCover lineNumber="32" covered="true" />
+    <lineToCover lineNumber="34" covered="true" />
+    <lineToCover lineNumber="35" covered="true" />
+    <lineToCover lineNumber="37" covered="true" />
+    <lineToCover lineNumber="38" covered="true" />
+    <lineToCover lineNumber="39" covered="true" />
+    <lineToCover lineNumber="40" covered="true" />
+    <lineToCover lineNumber="41" covered="true" />
+    <lineToCover lineNumber="42" covered="true" />
+    <lineToCover lineNumber="44" covered="true" />
+    <lineToCover lineNumber="46" covered="true" />
+    <lineToCover lineNumber="47" covered="true" />
+    <lineToCover lineNumber="48" covered="true" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Commands\TambahTarifAirTangkiCommand.cs">
-    <lineToCover lineNumber="11" covered="true" />
     <lineToCover lineNumber="12" covered="true" />
     <lineToCover lineNumber="13" covered="true" />
     <lineToCover lineNumber="14" covered="true" />
-    <lineToCover lineNumber="17" covered="true" />
+    <lineToCover lineNumber="15" covered="true" />
     <lineToCover lineNumber="18" covered="true" />
-    <lineToCover lineNumber="20" covered="true" branchesToCover="2" coveredBranches="2" />
-    <lineToCover lineNumber="21" covered="true" />
+    <lineToCover lineNumber="19" covered="true" />
+    <lineToCover lineNumber="21" covered="true" branchesToCover="2" coveredBranches="2" />
     <lineToCover lineNumber="22" covered="true" />
     <lineToCover lineNumber="23" covered="true" />
-    <lineToCover lineNumber="24" covered="true" />
-    <lineToCover lineNumber="25" covered="true" />
+    <lineToCover lineNumber="24" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Commands\UpdateEmployeeListingCommand.cs">
     <lineToCover lineNumber="13" covered="false" />
@@ -331,11 +310,9 @@
     <lineToCover lineNumber="1" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\MainWindow.g.cs">
-    <lineToCover lineNumber="55" covered="false" />
-    <lineToCover lineNumber="56" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="56" covered="false" />
     <lineToCover lineNumber="57" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="58" covered="false" />
-    <lineToCover lineNumber="59" covered="false" />
     <lineToCover lineNumber="60" covered="false" />
     <lineToCover lineNumber="61" covered="false" />
   </file>
@@ -346,12 +323,12 @@
     <lineToCover lineNumber="12" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Models\Kategori.cs">
-    <lineToCover lineNumber="5" covered="false" />
-    <lineToCover lineNumber="6" covered="false" />
+    <lineToCover lineNumber="5" covered="true" />
+    <lineToCover lineNumber="6" covered="true" />
     <lineToCover lineNumber="7" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Models\TarifAirTangki.cs">
-    <lineToCover lineNumber="9" covered="false" />
+    <lineToCover lineNumber="9" covered="true" />
     <lineToCover lineNumber="10" covered="false" />
     <lineToCover lineNumber="11" covered="false" />
     <lineToCover lineNumber="12" covered="false" />
@@ -369,20 +346,18 @@
   <file path="D:\repos\RestDemo\WpfApp\TarifAirTangkiService.cs">
     <lineToCover lineNumber="16" covered="false" />
     <lineToCover lineNumber="17" covered="false" />
-    <lineToCover lineNumber="18" covered="false" />
-    <lineToCover lineNumber="19" covered="false" />
+    <lineToCover lineNumber="19" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="20" covered="false" />
     <lineToCover lineNumber="21" covered="false" />
     <lineToCover lineNumber="22" covered="false" />
-    <lineToCover lineNumber="25" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="24" covered="false" />
+    <lineToCover lineNumber="25" covered="false" />
     <lineToCover lineNumber="26" covered="false" />
-    <lineToCover lineNumber="27" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="27" covered="false" />
     <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="29" covered="false" branchesToCover="2" coveredBranches="0" />
-    <lineToCover lineNumber="30" covered="false" />
     <lineToCover lineNumber="31" covered="false" />
     <lineToCover lineNumber="32" covered="false" />
-    <lineToCover lineNumber="33" covered="false" />
+    <lineToCover lineNumber="33" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="34" covered="false" />
     <lineToCover lineNumber="35" covered="false" />
     <lineToCover lineNumber="36" covered="false" />
@@ -392,10 +367,25 @@
     <lineToCover lineNumber="40" covered="false" />
     <lineToCover lineNumber="41" covered="false" />
     <lineToCover lineNumber="42" covered="false" />
-    <lineToCover lineNumber="45" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="45" covered="false" />
     <lineToCover lineNumber="46" covered="false" />
     <lineToCover lineNumber="47" covered="false" />
     <lineToCover lineNumber="48" covered="false" />
+    <lineToCover lineNumber="51" covered="false" />
+    <lineToCover lineNumber="52" covered="false" />
+    <lineToCover lineNumber="53" covered="false" />
+    <lineToCover lineNumber="54" covered="false" />
+    <lineToCover lineNumber="57" covered="false" />
+    <lineToCover lineNumber="58" covered="false" />
+    <lineToCover lineNumber="59" covered="false" />
+    <lineToCover lineNumber="60" covered="false" />
+    <lineToCover lineNumber="63" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="64" covered="false" />
+    <lineToCover lineNumber="65" covered="false" />
+    <lineToCover lineNumber="66" covered="false" />
+    <lineToCover lineNumber="69" covered="false" />
+    <lineToCover lineNumber="70" covered="false" />
+    <lineToCover lineNumber="71" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\ViewModels\AddEmployeeViewModel.cs">
     <lineToCover lineNumber="15" covered="false" />
@@ -473,12 +463,12 @@
     <lineToCover lineNumber="19" covered="false" />
     <lineToCover lineNumber="20" covered="false" />
     <lineToCover lineNumber="21" covered="false" />
-    <lineToCover lineNumber="24" covered="false" />
-    <lineToCover lineNumber="25" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="24" covered="true" />
+    <lineToCover lineNumber="25" covered="true" branchesToCover="2" coveredBranches="1" />
     <lineToCover lineNumber="26" covered="false" />
     <lineToCover lineNumber="27" covered="false" />
     <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="29" covered="false" />
+    <lineToCover lineNumber="29" covered="true" />
     <lineToCover lineNumber="32" covered="false" />
     <lineToCover lineNumber="33" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="34" covered="false" />
@@ -503,115 +493,33 @@
     <lineToCover lineNumber="24" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\ViewModels\TambahTarifAirTangkiViewModel.cs">
-    <lineToCover lineNumber="14" covered="false" />
-    <lineToCover lineNumber="15" covered="true" />
-    <lineToCover lineNumber="20" covered="false" />
-    <lineToCover lineNumber="22" covered="false" />
-    <lineToCover lineNumber="23" covered="false" />
-    <lineToCover lineNumber="25" covered="false" />
-    <lineToCover lineNumber="26" covered="false" branchesToCover="2" coveredBranches="0" />
-    <lineToCover lineNumber="27" covered="false" />
-    <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="29" covered="false" />
-    <lineToCover lineNumber="31" covered="false" />
-    <lineToCover lineNumber="32" covered="false" />
-    <lineToCover lineNumber="37" covered="false" />
-    <lineToCover lineNumber="39" covered="false" />
-    <lineToCover lineNumber="40" covered="false" />
-    <lineToCover lineNumber="41" covered="false" />
-    <lineToCover lineNumber="42" covered="false" />
-    <lineToCover lineNumber="47" covered="false" />
-    <lineToCover lineNumber="49" covered="true" />
-    <lineToCover lineNumber="50" covered="true" />
-    <lineToCover lineNumber="51" covered="true" />
-    <lineToCover lineNumber="52" covered="true" />
-    <lineToCover lineNumber="55" covered="false" />
-    <lineToCover lineNumber="61" covered="false" />
-    <lineToCover lineNumber="63" covered="false" />
-    <lineToCover lineNumber="65" covered="false" />
-    <lineToCover lineNumber="67" covered="true" />
-    <lineToCover lineNumber="68" covered="true" />
-    <lineToCover lineNumber="69" covered="true" />
-    <lineToCover lineNumber="70" covered="true" />
-    <lineToCover lineNumber="71" covered="true" />
-    <lineToCover lineNumber="72" covered="true" />
-    <lineToCover lineNumber="73" covered="true" />
-    <lineToCover lineNumber="74" covered="true" />
-    <lineToCover lineNumber="76" covered="true" />
-    <lineToCover lineNumber="78" covered="true" />
-    <lineToCover lineNumber="79" covered="true" />
-    <lineToCover lineNumber="82" covered="false" />
-    <lineToCover lineNumber="83" covered="false" branchesToCover="2" coveredBranches="0" />
-    <lineToCover lineNumber="84" covered="false" />
-    <lineToCover lineNumber="85" covered="false" />
-    <lineToCover lineNumber="88" covered="true" />
-    <lineToCover lineNumber="89" covered="true" branchesToCover="2" coveredBranches="1" />
-    <lineToCover lineNumber="90" covered="false" />
-    <lineToCover lineNumber="91" covered="false" />
-    <lineToCover lineNumber="92" covered="false" />
-    <lineToCover lineNumber="93" covered="false" />
-    <lineToCover lineNumber="94" covered="true" />
-    <lineToCover lineNumber="97" covered="false" />
-    <lineToCover lineNumber="98" covered="false" />
-    <lineToCover lineNumber="99" covered="false" />
-  </file>
-  <file path="D:\repos\RestDemo\WpfApp\ViewModels\TarifAirTangkiViewModel.cs">
-    <lineToCover lineNumber="11" covered="true" />
-    <lineToCover lineNumber="12" covered="true" />
     <lineToCover lineNumber="14" covered="true" />
     <lineToCover lineNumber="15" covered="true" />
     <lineToCover lineNumber="16" covered="true" />
-    <lineToCover lineNumber="17" covered="true" />
-    <lineToCover lineNumber="18" covered="true" />
-    <lineToCover lineNumber="19" covered="true" />
-    <lineToCover lineNumber="20" covered="true" />
     <lineToCover lineNumber="21" covered="true" />
-    <lineToCover lineNumber="22" covered="true" />
     <lineToCover lineNumber="23" covered="true" />
     <lineToCover lineNumber="24" covered="true" />
-    <lineToCover lineNumber="25" covered="true" />
     <lineToCover lineNumber="26" covered="true" />
-    <lineToCover lineNumber="27" covered="true" />
-    <lineToCover lineNumber="28" covered="true" branchesToCover="2" coveredBranches="1" />
-    <lineToCover lineNumber="29" covered="true" />
-    <lineToCover lineNumber="30" covered="true" />
-    <lineToCover lineNumber="31" covered="false" />
+    <lineToCover lineNumber="27" covered="true" branchesToCover="2" coveredBranches="1" />
+    <lineToCover lineNumber="28" covered="false" />
+    <lineToCover lineNumber="29" covered="false" />
+    <lineToCover lineNumber="30" covered="false" />
     <lineToCover lineNumber="32" covered="true" />
     <lineToCover lineNumber="33" covered="true" />
-    <lineToCover lineNumber="34" covered="true" />
-    <lineToCover lineNumber="35" covered="true" />
-    <lineToCover lineNumber="36" covered="true" />
-    <lineToCover lineNumber="37" covered="true" />
-    <lineToCover lineNumber="38" covered="false" />
-    <lineToCover lineNumber="39" covered="true" />
+    <lineToCover lineNumber="38" covered="true" />
     <lineToCover lineNumber="40" covered="true" />
     <lineToCover lineNumber="41" covered="true" />
     <lineToCover lineNumber="42" covered="true" />
-    <lineToCover lineNumber="43" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="44" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="45" covered="true" />
-    <lineToCover lineNumber="46" covered="true" />
-    <lineToCover lineNumber="47" covered="true" />
-    <lineToCover lineNumber="48" covered="true" />
-    <lineToCover lineNumber="49" covered="true" />
+    <lineToCover lineNumber="43" covered="true" />
+    <lineToCover lineNumber="48" covered="false" />
     <lineToCover lineNumber="50" covered="true" />
     <lineToCover lineNumber="51" covered="true" />
     <lineToCover lineNumber="52" covered="true" />
     <lineToCover lineNumber="53" covered="true" />
-    <lineToCover lineNumber="54" covered="false" />
-    <lineToCover lineNumber="55" covered="true" />
     <lineToCover lineNumber="56" covered="true" />
-    <lineToCover lineNumber="57" covered="true" />
-    <lineToCover lineNumber="58" covered="true" />
-    <lineToCover lineNumber="59" covered="true" />
-    <lineToCover lineNumber="60" covered="true" />
-    <lineToCover lineNumber="61" covered="true" />
-    <lineToCover lineNumber="62" covered="true" />
-    <lineToCover lineNumber="63" covered="true" />
-    <lineToCover lineNumber="64" covered="true" />
-    <lineToCover lineNumber="65" covered="true" />
+    <lineToCover lineNumber="62" covered="false" />
+    <lineToCover lineNumber="64" covered="false" />
     <lineToCover lineNumber="66" covered="true" />
-    <lineToCover lineNumber="67" covered="true" />
     <lineToCover lineNumber="68" covered="true" />
     <lineToCover lineNumber="69" covered="true" />
     <lineToCover lineNumber="70" covered="true" />
@@ -621,70 +529,98 @@
     <lineToCover lineNumber="74" covered="true" />
     <lineToCover lineNumber="75" covered="true" />
     <lineToCover lineNumber="76" covered="true" />
-    <lineToCover lineNumber="77" covered="true" />
     <lineToCover lineNumber="78" covered="true" />
-    <lineToCover lineNumber="79" covered="true" />
     <lineToCover lineNumber="80" covered="true" />
     <lineToCover lineNumber="81" covered="true" />
-    <lineToCover lineNumber="82" covered="true" />
-    <lineToCover lineNumber="83" covered="true" />
-    <lineToCover lineNumber="84" covered="true" />
-    <lineToCover lineNumber="85" covered="true" />
-    <lineToCover lineNumber="86" covered="true" />
-    <lineToCover lineNumber="87" covered="true" />
-    <lineToCover lineNumber="88" covered="true" />
-    <lineToCover lineNumber="89" covered="true" />
+    <lineToCover lineNumber="84" covered="false" />
+    <lineToCover lineNumber="85" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="86" covered="false" />
+    <lineToCover lineNumber="87" covered="false" />
     <lineToCover lineNumber="90" covered="true" />
-    <lineToCover lineNumber="91" covered="true" />
+    <lineToCover lineNumber="91" covered="true" branchesToCover="2" coveredBranches="2" />
     <lineToCover lineNumber="92" covered="true" />
     <lineToCover lineNumber="93" covered="true" />
     <lineToCover lineNumber="94" covered="true" />
     <lineToCover lineNumber="95" covered="true" />
     <lineToCover lineNumber="96" covered="true" />
-    <lineToCover lineNumber="97" covered="true" />
+    <lineToCover lineNumber="99" covered="false" />
+    <lineToCover lineNumber="100" covered="false" />
+    <lineToCover lineNumber="101" covered="false" />
+  </file>
+  <file path="D:\repos\RestDemo\WpfApp\ViewModels\TarifAirTangkiViewModel.cs">
+    <lineToCover lineNumber="10" covered="true" />
+    <lineToCover lineNumber="15" covered="true" />
+    <lineToCover lineNumber="17" covered="true" />
+    <lineToCover lineNumber="18" covered="true" />
+    <lineToCover lineNumber="19" covered="true" />
+    <lineToCover lineNumber="20" covered="true" />
+    <lineToCover lineNumber="21" covered="true" />
+    <lineToCover lineNumber="27" covered="true" />
+    <lineToCover lineNumber="29" covered="false" />
+    <lineToCover lineNumber="30" covered="false" />
+    <lineToCover lineNumber="31" covered="false" />
+    <lineToCover lineNumber="32" covered="false" />
+    <lineToCover lineNumber="35" covered="true" />
+    <lineToCover lineNumber="40" covered="true" />
+    <lineToCover lineNumber="42" covered="true" />
+    <lineToCover lineNumber="43" covered="true" />
+    <lineToCover lineNumber="44" covered="true" />
+    <lineToCover lineNumber="45" covered="true" />
+    <lineToCover lineNumber="51" covered="true" />
+    <lineToCover lineNumber="53" covered="true" />
+    <lineToCover lineNumber="54" covered="true" />
+    <lineToCover lineNumber="55" covered="true" />
+    <lineToCover lineNumber="56" covered="true" />
+    <lineToCover lineNumber="62" covered="true" />
+    <lineToCover lineNumber="64" covered="true" />
+    <lineToCover lineNumber="65" covered="true" />
+    <lineToCover lineNumber="66" covered="true" />
+    <lineToCover lineNumber="67" covered="true" />
+    <lineToCover lineNumber="73" covered="true" />
+    <lineToCover lineNumber="75" covered="true" />
+    <lineToCover lineNumber="76" covered="true" />
+    <lineToCover lineNumber="77" covered="true" />
+    <lineToCover lineNumber="78" covered="true" />
+    <lineToCover lineNumber="84" covered="true" />
+    <lineToCover lineNumber="86" covered="true" />
+    <lineToCover lineNumber="87" covered="true" />
+    <lineToCover lineNumber="88" covered="true" />
+    <lineToCover lineNumber="89" covered="true" />
+    <lineToCover lineNumber="92" covered="true" />
+    <lineToCover lineNumber="93" covered="true" />
+    <lineToCover lineNumber="94" covered="false" />
+    <lineToCover lineNumber="95" covered="false" />
+    <lineToCover lineNumber="96" covered="false" />
     <lineToCover lineNumber="98" covered="true" />
     <lineToCover lineNumber="99" covered="true" />
     <lineToCover lineNumber="100" covered="true" />
-    <lineToCover lineNumber="101" covered="true" />
     <lineToCover lineNumber="102" covered="true" />
     <lineToCover lineNumber="103" covered="true" />
     <lineToCover lineNumber="104" covered="true" />
     <lineToCover lineNumber="105" covered="true" />
     <lineToCover lineNumber="106" covered="true" />
     <lineToCover lineNumber="107" covered="true" />
-    <lineToCover lineNumber="108" covered="true" />
-    <lineToCover lineNumber="109" covered="true" />
-    <lineToCover lineNumber="110" covered="true" branchesToCover="2" coveredBranches="1" />
-    <lineToCover lineNumber="111" covered="true" />
+    <lineToCover lineNumber="110" covered="true" />
+    <lineToCover lineNumber="111" covered="true" branchesToCover="2" coveredBranches="1" />
     <lineToCover lineNumber="112" covered="true" />
-    <lineToCover lineNumber="113" covered="true" branchesToCover="2" coveredBranches="1" />
-    <lineToCover lineNumber="114" covered="true" branchesToCover="2" coveredBranches="1" />
-    <lineToCover lineNumber="115" covered="true" branchesToCover="2" coveredBranches="1" />
+    <lineToCover lineNumber="115" covered="true" />
     <lineToCover lineNumber="116" covered="true" />
     <lineToCover lineNumber="117" covered="true" />
-    <lineToCover lineNumber="118" covered="true" branchesToCover="2" coveredBranches="1" />
+    <lineToCover lineNumber="118" covered="true" />
     <lineToCover lineNumber="119" covered="true" />
     <lineToCover lineNumber="120" covered="true" />
-    <lineToCover lineNumber="121" covered="true" />
-    <lineToCover lineNumber="122" covered="true" />
     <lineToCover lineNumber="123" covered="true" />
     <lineToCover lineNumber="124" covered="true" />
-    <lineToCover lineNumber="125" covered="true" branchesToCover="4" coveredBranches="4" />
     <lineToCover lineNumber="126" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="127" covered="true" />
-    <lineToCover lineNumber="128" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="129" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="130" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="131" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="132" covered="true" />
-    <lineToCover lineNumber="133" covered="true" branchesToCover="4" coveredBranches="4" />
-    <lineToCover lineNumber="134" covered="true" branchesToCover="4" coveredBranches="4" />
+    <lineToCover lineNumber="127" covered="true" branchesToCover="4" coveredBranches="4" />
+    <lineToCover lineNumber="129" covered="true" />
+    <lineToCover lineNumber="130" covered="true" />
   </file>
-  <file path="D:\repos\RestDemo\WpfApp\ViewModels\TATViewmModel.cs">
-    <lineToCover lineNumber="9" covered="false" />
-    <lineToCover lineNumber="10" covered="false" />
+  <file path="D:\repos\RestDemo\WpfApp\ViewModels\TatViewModel.cs">
+    <lineToCover lineNumber="9" covered="true" />
+    <lineToCover lineNumber="10" covered="true" />
     <lineToCover lineNumber="11" covered="false" />
-    <lineToCover lineNumber="12" covered="false" />
+    <lineToCover lineNumber="12" covered="true" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\ViewModels\UpdateEmployeeViewModel.cs">
     <lineToCover lineNumber="15" covered="false" />
@@ -708,11 +644,9 @@
     <lineToCover lineNumber="15" covered="true" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\AddEmployeeView.g.cs">
-    <lineToCover lineNumber="53" covered="false" />
-    <lineToCover lineNumber="54" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="54" covered="false" />
     <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" />
-    <lineToCover lineNumber="57" covered="false" />
     <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
   </file>
@@ -727,11 +661,9 @@
     <lineToCover lineNumber="26" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\EmployeeListingView.g.cs">
-    <lineToCover lineNumber="53" covered="false" />
-    <lineToCover lineNumber="54" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="54" covered="false" />
     <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" />
-    <lineToCover lineNumber="57" covered="false" />
     <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
   </file>
@@ -745,11 +677,9 @@
     <lineToCover lineNumber="24" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\TambahTarifAirTangkiView.g.cs">
-    <lineToCover lineNumber="54" covered="false" />
-    <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="55" covered="false" />
     <lineToCover lineNumber="56" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="57" covered="false" />
-    <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
     <lineToCover lineNumber="60" covered="false" />
   </file>
@@ -764,11 +694,9 @@
     <lineToCover lineNumber="26" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\TarifAirTangkiView.g.cs">
-    <lineToCover lineNumber="54" covered="false" />
-    <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="55" covered="false" />
     <lineToCover lineNumber="56" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="57" covered="false" />
-    <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
     <lineToCover lineNumber="60" covered="false" />
   </file>
@@ -782,11 +710,9 @@
     <lineToCover lineNumber="24" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\UpdateEmployeeView.g.cs">
-    <lineToCover lineNumber="53" covered="false" />
-    <lineToCover lineNumber="54" covered="false" branchesToCover="2" coveredBranches="0" />
+    <lineToCover lineNumber="54" covered="false" />
     <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" />
-    <lineToCover lineNumber="57" covered="false" />
     <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
   </file>
@@ -862,27 +788,22 @@
     <lineToCover lineNumber="101" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs">
-    <lineToCover lineNumber="24" covered="false" />
     <lineToCover lineNumber="25" covered="false" />
     <lineToCover lineNumber="26" covered="false" />
     <lineToCover lineNumber="27" covered="false" />
     <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="32" covered="false" />
     <lineToCover lineNumber="33" covered="false" />
     <lineToCover lineNumber="34" covered="false" />
     <lineToCover lineNumber="35" covered="false" />
-    <lineToCover lineNumber="39" covered="false" />
     <lineToCover lineNumber="40" covered="false" />
     <lineToCover lineNumber="41" covered="false" />
     <lineToCover lineNumber="42" covered="false" />
-    <lineToCover lineNumber="46" covered="false" />
     <lineToCover lineNumber="47" covered="false" />
     <lineToCover lineNumber="48" covered="false" />
     <lineToCover lineNumber="49" covered="false" />
     <lineToCover lineNumber="50" covered="false" />
     <lineToCover lineNumber="51" covered="false" />
     <lineToCover lineNumber="52" covered="false" />
-    <lineToCover lineNumber="56" covered="false" />
     <lineToCover lineNumber="57" covered="false" />
     <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />

@@ -8,7 +8,7 @@ namespace WpfApp.Commands
 {
     public class AturUlangFilterTarifAirTangkiCommand : CommandBase
     {
-        private TarifAirTangkiViewModel _tarifAirTangkiViewModel;
+        private readonly TarifAirTangkiViewModel _tarifAirTangkiViewModel;
 
         public AturUlangFilterTarifAirTangkiCommand(TarifAirTangkiViewModel tarifAirTangkiViewModel)
         {

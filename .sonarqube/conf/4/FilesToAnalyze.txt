@@ -1,0 +1,16 @@
+﻿D:\repos\RestDemo\RestDemo\Controllers\EmployeesController.cs
+D:\repos\RestDemo\RestDemo\Controllers\KategorisController.cs
+D:\repos\RestDemo\RestDemo\Controllers\TarifAirTangkisController.cs
+D:\repos\RestDemo\RestDemo\Data\MySqlDbContext.cs
+D:\repos\RestDemo\RestDemo\Models\Employee.cs
+D:\repos\RestDemo\RestDemo\Models\Kategori.cs
+D:\repos\RestDemo\RestDemo\Models\TarifAirTangki.cs
+D:\repos\RestDemo\RestDemo\Program.cs
+D:\repos\RestDemo\RestDemo\Repositories\EmployeeRepository.cs
+D:\repos\RestDemo\RestDemo\Repositories\IEmployeeRepository.cs
+D:\repos\RestDemo\RestDemo\Startup.cs
+D:\repos\RestDemo\RestDemo\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+D:\repos\RestDemo\RestDemo\obj\Debug\netcoreapp3.1\RestDemo.AssemblyInfo.cs
+D:\repos\RestDemo\RestDemo\appsettings.Development.json
+D:\repos\RestDemo\RestDemo\appsettings.json
+D:\repos\RestDemo\RestDemo\Properties\launchSettings.json

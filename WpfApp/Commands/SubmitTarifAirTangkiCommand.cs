@@ -11,7 +11,7 @@ namespace WpfApp.Commands
 {
     public class SubmitTarifAirTangkiCommand : CommandBase
     {
-        private TambahTarifAirTangkiViewModel _tambahTarifAirTangkiViewModel;
+        private readonly TambahTarifAirTangkiViewModel _tambahTarifAirTangkiViewModel;
 
         public SubmitTarifAirTangkiCommand(TambahTarifAirTangkiViewModel tambahTarifAirTangkiViewModel)
         {
@@ -20,36 +20,30 @@ namespace WpfApp.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            try
+            if (_tambahTarifAirTangkiViewModel.IsEdit)
             {
-                if (_tambahTarifAirTangkiViewModel.IsEdit)
+                TarifAirTangki updateTat = new TarifAirTangki
                 {
-                    TarifAirTangki updateTat = new TarifAirTangki
-                    {
-                        Id = _tambahTarifAirTangkiViewModel.SelectedTat.Id,
-                        BiayaAir = _tambahTarifAirTangkiViewModel.BiayaAir,
-                        KategoriId = _tambahTarifAirTangkiViewModel.Selected.Id
-                    };
+                    Id = _tambahTarifAirTangkiViewModel.SelectedTat.Id,
+                    BiayaAir = _tambahTarifAirTangkiViewModel.BiayaAir,
+                    KategoriId = _tambahTarifAirTangkiViewModel.Selected.Id
+                };
 
-                    HttpResponseMessage response = await WebApi.PutAsync($"tarifAirTangki/{updateTat.Id}", updateTat);
-                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
-                    {
-                        _ = MessageBox.Show("Data berhasil diubah!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                }
-                else
-                {
-                    TarifAirTangki newTat = new TarifAirTangki { BiayaAir = _tambahTarifAirTangkiViewModel.BiayaAir, KategoriId = _tambahTarifAirTangkiViewModel.Selected.Id };
-                    HttpResponseMessage response = await WebApi.PostAsync("tarifAirTangki", newTat);
-                    if (response.StatusCode == System.Net.HttpStatusCode.Created)
-                    {
-                        _ = MessageBox.Show("Data berhasil ditambahkan!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                }
+                await _tambahTarifAirTangkiViewModel.RestApi.PutAsync($"tarifAirTangki/{updateTat.Id}", updateTat);
+
+                _ = MessageBox.Show("Data berhasil diubah!.");
             }
-            catch (Exception)
+            else
             {
-                throw;
+                TarifAirTangki newTat = new TarifAirTangki
+                {
+                    BiayaAir = _tambahTarifAirTangkiViewModel.BiayaAir,
+                    KategoriId = _tambahTarifAirTangkiViewModel.Selected.Id
+                };
+
+                await _tambahTarifAirTangkiViewModel.RestApi.PostAsync("tarifAirTangki", newTat);
+
+                _ = MessageBox.Show("Data berhasil ditambah!.");
             }
         }
     }
