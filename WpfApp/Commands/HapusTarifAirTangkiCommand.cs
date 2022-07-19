@@ -19,12 +19,7 @@ namespace WpfApp.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            HttpResponseMessage resp = await WebApi.DeleteAsync($"tarifAirTangki/{_tarifAirTangkiViewModel.SelectedTat.Id}");
-
-            if (resp.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                _ = MessageBox.Show("Data berhasil dihapus!", "Hapus", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
+            await _tarifAirTangkiViewModel.RestApi.DeleteAsync($"tarifAirTangki/{_tarifAirTangkiViewModel.SelectedTat.Id}");
         }
     }
 }

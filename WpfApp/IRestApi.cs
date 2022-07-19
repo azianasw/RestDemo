@@ -11,5 +11,6 @@ namespace WpfApp
         Task<List<Kategori>> GetKategoriAsync(string uri);
         Task PutAsync(string uri, TarifAirTangki updateTat);
         Task PostAsync(string uri, TarifAirTangki newTat);
+        Task DeleteAsync(string uri);
     }
 }

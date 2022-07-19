@@ -30,8 +30,6 @@ namespace WpfApp.Commands
                 };
 
                 await _tambahTarifAirTangkiViewModel.RestApi.PutAsync($"tarifAirTangki/{updateTat.Id}", updateTat);
-
-                _ = MessageBox.Show("Data berhasil diubah!.");
             }
             else
             {
@@ -42,8 +40,6 @@ namespace WpfApp.Commands
                 };
 
                 await _tambahTarifAirTangkiViewModel.RestApi.PostAsync("tarifAirTangki", newTat);
-
-                _ = MessageBox.Show("Data berhasil ditambah!.");
             }
         }
     }

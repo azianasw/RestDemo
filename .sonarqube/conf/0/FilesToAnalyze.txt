@@ -6,7 +6,6 @@ D:\repos\RestDemo\WpfApp\Commands\AturUlangFilterTarifAirTangkiCommand.cs
 D:\repos\RestDemo\WpfApp\Commands\CommandBase.cs
 D:\repos\RestDemo\WpfApp\Commands\DeleteEmployeeListingCommand.cs
 D:\repos\RestDemo\WpfApp\Commands\HapusTarifAirTangkiCommand.cs
-D:\repos\RestDemo\WpfApp\Commands\KoreksiTarifAirTangkiCommand.cs
 D:\repos\RestDemo\WpfApp\Commands\NavigateCommand.cs
 D:\repos\RestDemo\WpfApp\Commands\RefreshEmployeeListingCommand.cs
 D:\repos\RestDemo\WpfApp\Commands\RefreshTarifAirTangkiCommand.cs

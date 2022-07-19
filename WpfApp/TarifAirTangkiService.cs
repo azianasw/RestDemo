@@ -59,6 +59,11 @@ namespace WpfApp
             _ = await _client.PutAsync(uri, content);
         }
 
+        public async Task DeleteAsync(string uri)
+        {
+            await _client.DeleteAsync(uri);
+        }
+
         private async Task<string> GetJsonResponse(string uri)
         {
             HttpResponseMessage response = await _client.GetAsync(uri);

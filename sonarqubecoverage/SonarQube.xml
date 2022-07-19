@@ -19,9 +19,11 @@
     <lineToCover lineNumber="31" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\App.g.cs">
-    <lineToCover lineNumber="51" covered="false" />
+    <lineToCover lineNumber="50" covered="false" />
+    <lineToCover lineNumber="51" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="52" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="53" covered="false" />
+    <lineToCover lineNumber="54" covered="false" />
     <lineToCover lineNumber="55" covered="false" />
     <lineToCover lineNumber="56" covered="false" />
   </file>
@@ -54,10 +56,10 @@
     <lineToCover lineNumber="14" covered="true" />
     <lineToCover lineNumber="15" covered="true" />
     <lineToCover lineNumber="16" covered="true" />
-    <lineToCover lineNumber="19" covered="false" />
-    <lineToCover lineNumber="20" covered="false" />
-    <lineToCover lineNumber="21" covered="false" />
-    <lineToCover lineNumber="22" covered="false" />
+    <lineToCover lineNumber="19" covered="true" />
+    <lineToCover lineNumber="20" covered="true" />
+    <lineToCover lineNumber="21" covered="true" />
+    <lineToCover lineNumber="22" covered="true" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Commands\CommandBase.cs">
     <lineToCover lineNumber="15" covered="false" />
@@ -90,22 +92,13 @@
     <lineToCover lineNumber="16" covered="true" />
     <lineToCover lineNumber="17" covered="true" />
     <lineToCover lineNumber="18" covered="true" />
-    <lineToCover lineNumber="21" covered="false" />
-    <lineToCover lineNumber="22" covered="false" />
+    <lineToCover lineNumber="21" covered="true" />
+    <lineToCover lineNumber="22" covered="true" />
+    <lineToCover lineNumber="23" covered="true" />
     <lineToCover lineNumber="24" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="25" covered="false" />
-    <lineToCover lineNumber="26" covered="false" />
-    <lineToCover lineNumber="27" covered="false" />
-    <lineToCover lineNumber="28" covered="false" />
   </file>
-  <file path="D:\repos\RestDemo\WpfApp\Commands\KoreksiTarifAirTangkiCommand.cs">
-    <lineToCover lineNumber="17" covered="false" />
-    <lineToCover lineNumber="18" covered="false" />
-    <lineToCover lineNumber="19" covered="false" />
-    <lineToCover lineNumber="20" covered="false" />
-    <lineToCover lineNumber="23" covered="false" />
-    <lineToCover lineNumber="33" covered="false" />
-  </file>
+  <file path="D:\repos\RestDemo\WpfApp\Commands\KoreksiTarifAirTangkiCommand.cs" />
   <file path="D:\repos\RestDemo\WpfApp\Commands\NavigateCommand.cs">
     <lineToCover lineNumber="15" covered="false" />
     <lineToCover lineNumber="16" covered="false" />
@@ -183,18 +176,19 @@
     <lineToCover lineNumber="29" covered="true" />
     <lineToCover lineNumber="30" covered="true" />
     <lineToCover lineNumber="32" covered="true" />
+    <lineToCover lineNumber="33" covered="true" />
     <lineToCover lineNumber="34" covered="true" />
     <lineToCover lineNumber="35" covered="true" />
+    <lineToCover lineNumber="36" covered="true" />
     <lineToCover lineNumber="37" covered="true" />
     <lineToCover lineNumber="38" covered="true" />
     <lineToCover lineNumber="39" covered="true" />
     <lineToCover lineNumber="40" covered="true" />
     <lineToCover lineNumber="41" covered="true" />
     <lineToCover lineNumber="42" covered="true" />
+    <lineToCover lineNumber="43" covered="true" />
     <lineToCover lineNumber="44" covered="true" />
     <lineToCover lineNumber="46" covered="true" />
-    <lineToCover lineNumber="47" covered="true" />
-    <lineToCover lineNumber="48" covered="true" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\Commands\TambahTarifAirTangkiCommand.cs">
     <lineToCover lineNumber="12" covered="true" />
@@ -310,9 +304,11 @@
     <lineToCover lineNumber="1" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\MainWindow.g.cs">
-    <lineToCover lineNumber="56" covered="false" />
+    <lineToCover lineNumber="55" covered="false" />
+    <lineToCover lineNumber="56" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="57" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="58" covered="false" />
+    <lineToCover lineNumber="59" covered="false" />
     <lineToCover lineNumber="60" covered="false" />
     <lineToCover lineNumber="61" covered="false" />
   </file>
@@ -383,9 +379,13 @@
     <lineToCover lineNumber="64" covered="false" />
     <lineToCover lineNumber="65" covered="false" />
     <lineToCover lineNumber="66" covered="false" />
+    <lineToCover lineNumber="68" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="69" covered="false" />
     <lineToCover lineNumber="70" covered="false" />
     <lineToCover lineNumber="71" covered="false" />
+    <lineToCover lineNumber="74" covered="false" />
+    <lineToCover lineNumber="75" covered="false" />
+    <lineToCover lineNumber="76" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\ViewModels\AddEmployeeViewModel.cs">
     <lineToCover lineNumber="15" covered="false" />
@@ -556,10 +556,10 @@
     <lineToCover lineNumber="20" covered="true" />
     <lineToCover lineNumber="21" covered="true" />
     <lineToCover lineNumber="27" covered="true" />
-    <lineToCover lineNumber="29" covered="false" />
-    <lineToCover lineNumber="30" covered="false" />
-    <lineToCover lineNumber="31" covered="false" />
-    <lineToCover lineNumber="32" covered="false" />
+    <lineToCover lineNumber="29" covered="true" />
+    <lineToCover lineNumber="30" covered="true" />
+    <lineToCover lineNumber="31" covered="true" />
+    <lineToCover lineNumber="32" covered="true" />
     <lineToCover lineNumber="35" covered="true" />
     <lineToCover lineNumber="40" covered="true" />
     <lineToCover lineNumber="42" covered="true" />
@@ -588,9 +588,9 @@
     <lineToCover lineNumber="89" covered="true" />
     <lineToCover lineNumber="92" covered="true" />
     <lineToCover lineNumber="93" covered="true" />
-    <lineToCover lineNumber="94" covered="false" />
-    <lineToCover lineNumber="95" covered="false" />
-    <lineToCover lineNumber="96" covered="false" />
+    <lineToCover lineNumber="94" covered="true" />
+    <lineToCover lineNumber="95" covered="true" />
+    <lineToCover lineNumber="96" covered="true" />
     <lineToCover lineNumber="98" covered="true" />
     <lineToCover lineNumber="99" covered="true" />
     <lineToCover lineNumber="100" covered="true" />
@@ -644,9 +644,11 @@
     <lineToCover lineNumber="15" covered="true" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\AddEmployeeView.g.cs">
-    <lineToCover lineNumber="54" covered="false" />
+    <lineToCover lineNumber="53" covered="false" />
+    <lineToCover lineNumber="54" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" />
+    <lineToCover lineNumber="57" covered="false" />
     <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
   </file>
@@ -661,9 +663,11 @@
     <lineToCover lineNumber="26" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\EmployeeListingView.g.cs">
-    <lineToCover lineNumber="54" covered="false" />
+    <lineToCover lineNumber="53" covered="false" />
+    <lineToCover lineNumber="54" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" />
+    <lineToCover lineNumber="57" covered="false" />
     <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
   </file>
@@ -677,9 +681,11 @@
     <lineToCover lineNumber="24" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\TambahTarifAirTangkiView.g.cs">
-    <lineToCover lineNumber="55" covered="false" />
+    <lineToCover lineNumber="54" covered="false" />
+    <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="57" covered="false" />
+    <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
     <lineToCover lineNumber="60" covered="false" />
   </file>
@@ -694,9 +700,11 @@
     <lineToCover lineNumber="26" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\TarifAirTangkiView.g.cs">
-    <lineToCover lineNumber="55" covered="false" />
+    <lineToCover lineNumber="54" covered="false" />
+    <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="57" covered="false" />
+    <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
     <lineToCover lineNumber="60" covered="false" />
   </file>
@@ -710,9 +718,11 @@
     <lineToCover lineNumber="24" covered="false" />
   </file>
   <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\Views\UpdateEmployeeView.g.cs">
-    <lineToCover lineNumber="54" covered="false" />
+    <lineToCover lineNumber="53" covered="false" />
+    <lineToCover lineNumber="54" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="55" covered="false" branchesToCover="2" coveredBranches="0" />
     <lineToCover lineNumber="56" covered="false" />
+    <lineToCover lineNumber="57" covered="false" />
     <lineToCover lineNumber="58" covered="false" />
     <lineToCover lineNumber="59" covered="false" />
   </file>
@@ -787,25 +797,5 @@
     <lineToCover lineNumber="99" covered="false" />
     <lineToCover lineNumber="101" covered="false" />
   </file>
-  <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs">
-    <lineToCover lineNumber="25" covered="false" />
-    <lineToCover lineNumber="26" covered="false" />
-    <lineToCover lineNumber="27" covered="false" />
-    <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="33" covered="false" />
-    <lineToCover lineNumber="34" covered="false" />
-    <lineToCover lineNumber="35" covered="false" />
-    <lineToCover lineNumber="40" covered="false" />
-    <lineToCover lineNumber="41" covered="false" />
-    <lineToCover lineNumber="42" covered="false" />
-    <lineToCover lineNumber="47" covered="false" />
-    <lineToCover lineNumber="48" covered="false" />
-    <lineToCover lineNumber="49" covered="false" />
-    <lineToCover lineNumber="50" covered="false" />
-    <lineToCover lineNumber="51" covered="false" />
-    <lineToCover lineNumber="52" covered="false" />
-    <lineToCover lineNumber="57" covered="false" />
-    <lineToCover lineNumber="58" covered="false" />
-    <lineToCover lineNumber="59" covered="false" />
-  </file>
+  <file path="D:\repos\RestDemo\WpfApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs" />
 </coverage>

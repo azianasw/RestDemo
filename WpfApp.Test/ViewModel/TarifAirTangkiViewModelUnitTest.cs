@@ -169,5 +169,53 @@ namespace WpfApp.Test.ViewModel
             Assert.Equal(expected, bool.TryParse((string)parameter, out bool _));
             Assert.Equal(expected, bool.TryParse((string)parameter, out bool _));
         }
+
+        [Theory]
+        [InlineData("true", true)]
+        [InlineData(null, false)]
+        public void ExecuteKoreksiCommand_WithParam(object parameter, bool expected)
+        {
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object);
+
+            sut.KoreksiCommand.Execute(parameter);
+
+            Assert.Equal(expected, bool.TryParse((string)parameter, out bool _));
+            Assert.Equal(expected, bool.TryParse((string)parameter, out bool _));
+        }
+
+        [Fact]
+        public void ExecuteAturUlangFilterCommand_ResetFilters()
+        {
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object)
+            {
+                KodeTarifChecked = true,
+                NamaTarifChecked = true,
+                KodeTarif = "KodeTarif",
+                NamaTarif = "NamaTarif"
+            };
+
+            sut.AturUlangFilterCommand.Execute(null);
+
+            Assert.False(sut.KodeTarifChecked);
+            Assert.False(sut.NamaTarifChecked);
+            Assert.Equal(string.Empty, sut.KodeTarif);
+            Assert.Equal(string.Empty, sut.NamaTarif);
+        }
+
+        [Fact]
+        public void ExecuteHapusCommand_InvokeDeleteAsync()
+        {
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object)
+            {
+                SelectedTat = new TatViewModel { Id = 1, KategoriTarif = string.Empty, NamaTarif = string.Empty, BiayaAir = 0 }
+            };
+
+            sut.HapusCommand.Execute(null);
+
+            service.Verify(i => i.DeleteAsync(It.IsAny<string>()));
+        }
     }
 }
