@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfApp.Models;
 using WpfApp.ViewModels;
 
@@ -21,24 +22,9 @@ namespace WpfApp.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            try
-            {
-                string endpoint = $"tarifAirTangki?{_tarifAirTangkiViewModel.GetFilters()}";
+            string uri = $"tarifAirTangki?{_tarifAirTangkiViewModel.GetFilters()}";
 
-                HttpResponseMessage resp = await WebApi.GetAsync(endpoint);
-
-                if (resp.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    _tarifAirTangkiViewModel.TarifAirTangki = JsonConvert.DeserializeObject<List<TarifAirTangki>>(
-                            resp.Content.ReadAsStringAsync().Result)
-                            .Select(_ => new TATViewmModel { Id = _.Id, KategoriTarif = _.Kategori.KategoriTarif, NamaTarif = _.Kategori.NamaTarif, BiayaAir = _.BiayaAir }).ToList();
-                }
-
-            }
-            catch (Exception)
-            {
-            }
-
+            _tarifAirTangkiViewModel.TarifAirTangki = await _tarifAirTangkiViewModel.RestApi.GetAsync(uri);
         }
     }
 }

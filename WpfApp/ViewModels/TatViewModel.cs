@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WpfApp.ViewModels
 {
-    public class TATViewmModel : ViewModelBase
+    public class TatViewModel : ViewModelBase
     {
         public long Id { get; set; }
         public string KategoriTarif { get; set; }

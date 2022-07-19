@@ -9,7 +9,7 @@ namespace WpfApp.Test
         public void TidakAdaDataConverter_ReturnTrue_IfTotalDataIs0()
         {
             TidakAdaDataConverter sut = new TidakAdaDataConverter();
-            long totalData = 0;
+            int totalData = 0;
 
             bool result = (bool)sut.Convert(totalData, null, null, null);
 
@@ -20,7 +20,7 @@ namespace WpfApp.Test
         public void TidakAdaDataConverter_ReturnFalse_IfTotalDataIsGt0()
         {
             TidakAdaDataConverter sut = new TidakAdaDataConverter();
-            long totalData = 1;
+            int totalData = 1;
 
             bool result = (bool)sut.Convert(totalData, null, null, null);
 

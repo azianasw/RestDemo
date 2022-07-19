@@ -8,13 +8,6 @@ namespace WpfApp.Commands
 {
     public abstract class CommandBase : ICommand
     {
-        public event EventHandler CanExecuteChanged;
-
-        public virtual bool CanExecute(object parameter)
-        {
-            return true;
-        }
-
         private bool _isExecuting;
         public bool IsExecuting
         {
@@ -29,20 +22,22 @@ namespace WpfApp.Commands
             }
         }
 
+        public event EventHandler CanExecuteChanged;
+
+        public virtual bool CanExecute(object parameter)
+        {
+            return !IsExecuting;
+        }
+
         public void Execute(object parameter)
         {
             IsExecuting = true;
 
-            _ = ExecuteAsync(parameter);
+            ExecuteAsync(parameter);
 
             IsExecuting = false;
         }
 
         public abstract Task ExecuteAsync(object parameter);
-
-        protected void CanExecutedChanged()
-        {
-            CanExecuteChanged?.Invoke(this, new EventArgs());
-        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Moq;
+using System.Collections.Generic;
+using WpfApp.Models;
 using WpfApp.ViewModels;
 using Xunit;
 
@@ -6,24 +8,30 @@ namespace WpfApp.Test.ViewModel
 {
     public class TarifAirTangkiViewModelUnitTest
     {
+
         [Fact]
-        public void TarifAirTangkiViewModel_TotalRecord_ShouldReturnZeroOnInitialize()
+        public void TotalRecord_ShouldInitializeWithZero()
         {
-            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel();
-            long result = sut.TotalRecord;
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object);
+
+            int result = (int)sut.TotalRecord;
+
+            Assert.Null(sut.TarifAirTangki);
             Assert.Equal(0, result);
         }
 
         [Fact]
-        public void TarifAirTangkiViewModel_TotalRecord_ShouldReturn_3()
+        public void TotalRecord_ShouldReturnThreeItems()
         {
-            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object)
             {
-                TarifAirTangki = new List<TATViewmModel>()
+                TarifAirTangki = new List<TatViewModel>()
                 {
-                    new TATViewmModel{Id=1,KategoriTarif="Kategori Tarif 1",NamaTarif="Nama Tarif 1",BiayaAir=100},
-                    new TATViewmModel{Id=2,KategoriTarif="Kategori Tarif 2",NamaTarif="Nama Tarif 2",BiayaAir=100},
-                    new TATViewmModel{Id=3,KategoriTarif="Kategori Tarif 3",NamaTarif="Nama Tarif 3",BiayaAir=100},
+                    new TatViewModel{Id=1,KategoriTarif="Kategori Tarif 1",NamaTarif="Nama Tarif 1",BiayaAir=100},
+                    new TatViewModel{Id=2,KategoriTarif="Kategori Tarif 2",NamaTarif="Nama Tarif 2",BiayaAir=100},
+                    new TatViewModel{Id=3,KategoriTarif="Kategori Tarif 3",NamaTarif="Nama Tarif 3",BiayaAir=100},
                 }
             };
 
@@ -31,9 +39,10 @@ namespace WpfApp.Test.ViewModel
         }
 
         [Fact]
-        public void TarifAirTangkiViewModel_GetFilters_ShouldReturnDataWithFilterKategoriTarifIFItsChecked()
+        public void GetFilters_ShouldReturnDataWithFilterKategoriTarifIFItsChecked()
         {
-            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object)
             {
                 KodeTarifChecked = true,
                 KodeTarif = "1"
@@ -46,9 +55,10 @@ namespace WpfApp.Test.ViewModel
         }
 
         [Fact]
-        public void TarifAirTangkiViewModel_GetFilters_ShouldReturnDataWithFilterNamaTarifIFItsChecked()
+        public void GetFilters_ShouldReturnDataWithFilterNamaTarifIFItsChecked()
         {
-            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object)
             {
                 NamaTarifChecked = true,
                 NamaTarif = "1"
@@ -61,9 +71,10 @@ namespace WpfApp.Test.ViewModel
         }
 
         [Fact]
-        public void TarifAirTangkiViewModel_ResetFilters_ShouldUncheckAllAvailableOptionsAndResetItsValues()
+        public void ResetFilters_ShouldUncheckAllAvailableOptionsAndResetItsValues()
         {
-            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object)
             {
                 KodeTarifChecked = true,
                 NamaTarifChecked = true,
@@ -81,14 +92,15 @@ namespace WpfApp.Test.ViewModel
         }
 
         [Fact]
-        public void TarifAirTangkiViewModel_ResetFilters_ShouldClearValueAssiciatedOnGetFilters()
+        public void ResetFilters_ShouldClearValueAssiciatedOnGetFilters()
         {
-            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object)
             {
                 KodeTarifChecked = true,
                 NamaTarifChecked = true,
-                KodeTarif = "1",
-                NamaTarif = "1"
+                KodeTarif = "KodeTarif",
+                NamaTarif = "NamaTarif"
             };
 
             sut.ResetFilters();
@@ -97,5 +109,65 @@ namespace WpfApp.Test.ViewModel
             Assert.DoesNotContain("=", filters);
         }
 
+        [Fact]
+        public void ExecuteRefreshCommand_InvokeGetAsync_AndSetTarifAirTangki()
+        {
+            List<TatViewModel> expected = new List<TatViewModel>()
+            {
+                new TatViewModel()
+                {
+                    Id = 1,
+                    KategoriTarif = "KategoriTarif",
+                    NamaTarif = "NamaTarif",
+                    BiayaAir = 100
+                }
+            };
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            _ = service.Setup(i => i.GetAsync(It.IsAny<string>()))
+                .ReturnsAsync(expected);
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object);
+
+            sut.RefreshCommand.Execute(null);
+
+            service.Verify(i => i.GetAsync(It.IsAny<string>()));
+            Assert.Equal(expected, sut.TarifAirTangki);
+        }
+
+        [Fact]
+        public void ExecuteTambahCommand_InvokeGetKategoriAsync_AndSetKategori()
+        {
+            List<Kategori> expected = new List<Kategori>()
+            {
+                new Kategori()
+                {
+                    Id = 1,
+                    KategoriTarif = "KategoriTarif",
+                    NamaTarif = "NamaTarif"
+                }
+            };
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            _ = service.Setup(i => i.GetKategoriAsync(It.IsAny<string>()))
+                .ReturnsAsync(expected);
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object);
+
+            sut.TambahCommand.Execute(null);
+
+            service.Verify(i => i.GetKategoriAsync(It.IsAny<string>()));
+            Assert.Equal(expected, sut.Kategori);
+        }
+
+        [Theory]
+        [InlineData("true", true)]
+        [InlineData(null, false)]
+        public void ExecuteTambahCommand_WithParam(object parameter, bool expected)
+        {
+            Mock<IRestApi> service = new Mock<IRestApi>();
+            TarifAirTangkiViewModel sut = new TarifAirTangkiViewModel(service.Object);
+
+            sut.TambahCommand.Execute(parameter);
+
+            Assert.Equal(expected, bool.TryParse((string)parameter, out bool _));
+            Assert.Equal(expected, bool.TryParse((string)parameter, out bool _));
+        }
     }
 }

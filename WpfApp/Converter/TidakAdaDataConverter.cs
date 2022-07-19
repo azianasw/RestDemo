@@ -10,7 +10,7 @@ namespace WpfApp.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (long)value == 0;
+            return (int)value == 0;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

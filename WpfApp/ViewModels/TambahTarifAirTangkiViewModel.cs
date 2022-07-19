@@ -12,7 +12,7 @@ namespace WpfApp.ViewModels
     public class TambahTarifAirTangkiViewModel : ViewModelBase, INotifyDataErrorInfo
     {
         public List<Kategori> Kategori { get; }
-        public TATViewmModel SelectedTat { get; }
+        public TatViewModel SelectedTat { get; }
 
         private long _biayaAir;
         public long BiayaAir
@@ -64,7 +64,7 @@ namespace WpfApp.ViewModels
 
         public ICommand SubmitCommand { get; }
 
-        public TambahTarifAirTangkiViewModel(List<Kategori> kategori, TATViewmModel selectedTat = null, string title = "Tambah Tarif Air Tangki", bool isEdit = false)
+        public TambahTarifAirTangkiViewModel(List<Kategori> kategori, TatViewModel selectedTat = null, string title = "Tambah Tarif Air Tangki", bool isEdit = false)
         {
             Kategori = kategori;
             SelectedTat = selectedTat;

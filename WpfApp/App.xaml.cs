@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using WpfApp.Store;
 using WpfApp.ViewModels;
 
@@ -25,7 +19,7 @@ namespace WpfApp
         protected override void OnStartup(StartupEventArgs e)
         {
             //_navigationStore.CurrentViewModel = CreateEmployeeListingViewModel();
-            _navigationStore.CurrentViewModel = new TarifAirTangkiViewModel();
+            _navigationStore.CurrentViewModel = new TarifAirTangkiViewModel(new TarifAirTangkiService());
 
             MainWindow = new MainWindow()
             {
