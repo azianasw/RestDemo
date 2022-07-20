@@ -11,9 +11,9 @@ namespace WpfApp.ViewModels
 {
     public class TambahTarifAirTangkiViewModel : ViewModelBase, INotifyDataErrorInfo
     {
-        public IRestApi RestApi { get; set; }
         public List<Kategori> Kategori { get; }
-        public TatViewModel SelectedTat { get; }
+
+        public long Id { get; set; }
 
         private long _biayaAir;
         public long BiayaAir
@@ -22,26 +22,35 @@ namespace WpfApp.ViewModels
             set
             {
                 _biayaAir = value;
+                OnPropertyChanged(nameof(BiayaAir));
+                OnPropertyChanged(nameof(IsValid));
 
                 _errorViewModel.ClearErrors(nameof(BiayaAir));
                 if (_biayaAir < 0)
                 {
-                    _errorViewModel.AddError(nameof(BiayaAir), "Tidak boleh minus");
+                    _errorViewModel.AddError(nameof(BiayaAir), "Biaya air must gt 0.");
                 }
-
-                OnPropertyChanged(nameof(BiayaAir));
             }
         }
-        private Kategori _selected;
-        public Kategori Selected
+
+        private Kategori _selectedKategori;
+        public Kategori SelectedKategori
         {
-            get => _selected;
+            get => _selectedKategori;
             set
             {
-                _selected = value;
-                OnPropertyChanged(nameof(Selected));
+                _selectedKategori = value;
+                OnPropertyChanged(nameof(SelectedKategori));
+                OnPropertyChanged(nameof(IsValid));
+
+                _errorViewModel.ClearErrors(nameof(SelectedKategori));
+                if (_selectedKategori == null)
+                {
+                    _errorViewModel.AddError(nameof(SelectedKategori), "Kategori is required.");
+                }
             }
         }
+
         private string _title;
         public string Title
         {
@@ -56,43 +65,40 @@ namespace WpfApp.ViewModels
         public bool IsEdit { get; }
 
         private readonly ErrorsViewModel _errorViewModel;
-
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
-
         public bool HasErrors => _errorViewModel.HasErrors;
-
-        public bool IsValid => !HasErrors;
+        public bool IsValid => !HasErrors && BiayaAir > 0 && SelectedKategori != null;
 
         public ICommand SubmitCommand { get; }
 
-        public TambahTarifAirTangkiViewModel(IRestApi restApi, List<Kategori> kategori, TatViewModel selectedTat = null, string title = "Tambah Tarif Air Tangki", bool isEdit = false)
+        public TambahTarifAirTangkiViewModel(IRestApi restApi, List<Kategori> kategori, INotification notification, TatViewModel selectedTat = null, string title = "Tambah Tarif Air Tangki", bool isEdit = false)
         {
-            RestApi = restApi;
             Kategori = kategori;
-            SelectedTat = selectedTat;
             Title = title;
             IsEdit = isEdit;
+
             _errorViewModel = new ErrorsViewModel();
             _errorViewModel.ErrorsChanged += ErrorViewModel_ErrorsChanged;
 
-            PrepareEditForm();
+            PrepareEditForm(selectedTat);
 
-            SubmitCommand = new SubmitTarifAirTangkiCommand(this);
+            SubmitCommand = new SubmitTarifAirTangkiCommand(this, restApi, notification);
+        }
+
+        private void PrepareEditForm(TatViewModel selectedTat)
+        {
+            if (selectedTat != null)
+            {
+                Id = selectedTat.Id;
+                BiayaAir = selectedTat.BiayaAir;
+                SelectedKategori = Kategori.FirstOrDefault(_ => selectedTat.KategoriTarif.Contains(_.KategoriTarif));
+            }
         }
 
         private void ErrorViewModel_ErrorsChanged(object sender, DataErrorsChangedEventArgs e)
         {
             ErrorsChanged?.Invoke(this, e);
             OnPropertyChanged(nameof(IsValid));
-        }
-
-        private void PrepareEditForm()
-        {
-            if (SelectedTat != null)
-            {
-                BiayaAir = SelectedTat.BiayaAir;
-                Selected = Kategori.FirstOrDefault(_ => SelectedTat.KategoriTarif.Contains(_.KategoriTarif));
-            }
         }
 
         public IEnumerable GetErrors(string propertyName)

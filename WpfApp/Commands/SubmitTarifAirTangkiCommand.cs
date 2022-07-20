@@ -11,35 +11,43 @@ namespace WpfApp.Commands
 {
     public class SubmitTarifAirTangkiCommand : CommandBase
     {
-        private readonly TambahTarifAirTangkiViewModel _tambahTarifAirTangkiViewModel;
+        private readonly TambahTarifAirTangkiViewModel _viewModel;
+        private readonly IRestApi _restApi;
+        private readonly INotification _notification;
 
-        public SubmitTarifAirTangkiCommand(TambahTarifAirTangkiViewModel tambahTarifAirTangkiViewModel)
+        public SubmitTarifAirTangkiCommand(TambahTarifAirTangkiViewModel viewModel, IRestApi restApi, INotification notification)
         {
-            _tambahTarifAirTangkiViewModel = tambahTarifAirTangkiViewModel;
+            _viewModel = viewModel;
+            _restApi = restApi;
+            _notification = notification;
         }
 
         public override async Task ExecuteAsync(object parameter)
         {
-            if (_tambahTarifAirTangkiViewModel.IsEdit)
+            if (_viewModel.IsEdit)
             {
                 TarifAirTangki updateTat = new TarifAirTangki
                 {
-                    Id = _tambahTarifAirTangkiViewModel.SelectedTat.Id,
-                    BiayaAir = _tambahTarifAirTangkiViewModel.BiayaAir,
-                    KategoriId = _tambahTarifAirTangkiViewModel.Selected.Id
+                    Id = _viewModel.Id,
+                    BiayaAir = _viewModel.BiayaAir,
+                    KategoriId = _viewModel.SelectedKategori.Id
                 };
 
-                await _tambahTarifAirTangkiViewModel.RestApi.PutAsync($"tarifAirTangki/{updateTat.Id}", updateTat);
+                await _restApi.PutAsync($"tarifAirTangki/{updateTat.Id}", updateTat);
+
+                _notification.Show("Data berhasil dikoreksi.");
             }
             else
             {
                 TarifAirTangki newTat = new TarifAirTangki
                 {
-                    BiayaAir = _tambahTarifAirTangkiViewModel.BiayaAir,
-                    KategoriId = _tambahTarifAirTangkiViewModel.Selected.Id
+                    BiayaAir = _viewModel.BiayaAir,
+                    KategoriId = _viewModel.SelectedKategori.Id
                 };
 
-                await _tambahTarifAirTangkiViewModel.RestApi.PostAsync("tarifAirTangki", newTat);
+                await _restApi.PostAsync("tarifAirTangki", newTat);
+
+                _notification.Show("Data berhasil ditambah.");
             }
         }
     }

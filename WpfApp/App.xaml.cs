@@ -18,8 +18,7 @@ namespace WpfApp
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            //_navigationStore.CurrentViewModel = CreateEmployeeListingViewModel();
-            _navigationStore.CurrentViewModel = new TarifAirTangkiViewModel(new TarifAirTangkiService());
+            _navigationStore.CurrentViewModel = new TarifAirTangkiViewModel(new TarifAirTangkiService(), new Notification());
 
             MainWindow = new MainWindow()
             {

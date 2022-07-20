@@ -13,18 +13,20 @@ namespace WpfApp.Commands
 {
     public class RefreshTarifAirTangkiCommand : CommandBase
     {
-        private readonly TarifAirTangkiViewModel _tarifAirTangkiViewModel;
+        private readonly TarifAirTangkiViewModel _viewModel;
+        private readonly IRestApi _restApi;
 
-        public RefreshTarifAirTangkiCommand(TarifAirTangkiViewModel tarifAirTangkiViewModel)
+        public RefreshTarifAirTangkiCommand(TarifAirTangkiViewModel viewModel, IRestApi restApi)
         {
-            _tarifAirTangkiViewModel = tarifAirTangkiViewModel;
+            _viewModel = viewModel;
+            _restApi = restApi;
         }
 
         public override async Task ExecuteAsync(object parameter)
         {
-            string uri = $"tarifAirTangki?{_tarifAirTangkiViewModel.GetFilters()}";
+            string uri = $"tarifAirTangki?{_viewModel.GetFilters()}";
 
-            _tarifAirTangkiViewModel.TarifAirTangki = await _tarifAirTangkiViewModel.RestApi.GetAsync(uri);
+            _viewModel.TarifAirTangki = await _restApi.GetAsync(uri);
         }
     }
 }

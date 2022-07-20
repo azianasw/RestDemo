@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace WpfApp.ViewModels
 {
@@ -20,7 +19,7 @@ namespace WpfApp.ViewModels
             return _propertyErrors.GetValueOrDefault(propertyName, null);
         }
 
-        internal void ClearErrors(string propertyName)
+        public void ClearErrors(string propertyName)
         {
             if (_propertyErrors.Remove(propertyName))
             {

@@ -19,26 +19,27 @@
     <Grid>
         <StackPanel Margin="20">
             <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       Margin="0 0 0 15" />
+                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                       Margin="20 0 20 20" />
             <TextBox Text="{Binding BiayaAir, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"
-                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
                      materialDesign:HintAssist.Hint="Biaya air"
-                     Margin="0 0 0 15" />
-            <ComboBox ItemsSource="{Binding Kategori, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="0 0 0 25" />
+            <ComboBox ItemsSource="{Binding Kategori}"
+                      SelectedValue="{Binding SelectedKategori, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"
                       DisplayMemberPath="NamaTarif"
-                      SelectedValue="{Binding Selected}"
-                      Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
                       materialDesign:HintAssist.Hint="Kategori"
-                      Margin="0 0 0 25" />
+                      materialDesign:TextFieldAssist.HasClearButton="True"
+                      Margin="0 0 0 30" />
             <Button Content="Submit"
                     Command="{Binding SubmitCommand}"
                     IsEnabled="{Binding IsValid}"
-                    Style="{StaticResource MaterialDesignFlatDarkButton}"
+                    Style="{StaticResource MaterialDesignOutlinedButton}"
                     Margin="0 0 0 10" />
             <Button Content="Close"
                     Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                    Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}" />
+                    Style="{StaticResource MaterialDesignOutlinedSecondaryButton}" />
         </StackPanel>
     </Grid>
 </UserControl>

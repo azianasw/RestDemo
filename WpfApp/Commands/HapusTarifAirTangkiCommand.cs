@@ -1,25 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Threading.Tasks;
 using WpfApp.ViewModels;
 
 namespace WpfApp.Commands
 {
     public class HapusTarifAirTangkiCommand : CommandBase
     {
-        private readonly TarifAirTangkiViewModel _tarifAirTangkiViewModel;
+        private readonly TarifAirTangkiViewModel _viewModel;
+        private readonly IRestApi _restApi;
+        private readonly INotification _notification;
 
-        public HapusTarifAirTangkiCommand(TarifAirTangkiViewModel tarifAirTangkiViewModel)
+        public HapusTarifAirTangkiCommand(TarifAirTangkiViewModel viewModel, IRestApi restApi, INotification notification)
         {
-            _tarifAirTangkiViewModel = tarifAirTangkiViewModel;
+            _viewModel = viewModel;
+            _restApi = restApi;
+            _notification = notification;
         }
 
         public override async Task ExecuteAsync(object parameter)
         {
-            await _tarifAirTangkiViewModel.RestApi.DeleteAsync($"tarifAirTangki/{_tarifAirTangkiViewModel.SelectedTat.Id}");
+            await _restApi.DeleteAsync($"tarifAirTangki/{_viewModel.SelectedTat.Id}");
+
+            _notification.Show("Data berhasil dihapus.");
         }
     }
 }

@@ -8,16 +8,16 @@ namespace WpfApp.Commands
 {
     public class AturUlangFilterTarifAirTangkiCommand : CommandBase
     {
-        private readonly TarifAirTangkiViewModel _tarifAirTangkiViewModel;
+        private readonly TarifAirTangkiViewModel _viewModel;
 
-        public AturUlangFilterTarifAirTangkiCommand(TarifAirTangkiViewModel tarifAirTangkiViewModel)
+        public AturUlangFilterTarifAirTangkiCommand(TarifAirTangkiViewModel viewModel)
         {
-            _tarifAirTangkiViewModel = tarifAirTangkiViewModel;
+            _viewModel = viewModel;
         }
 
         public override async Task ExecuteAsync(object parameter)
         {
-            _tarifAirTangkiViewModel.ResetFilters();
+            _viewModel.ResetFilters();
             _ = await Task.FromResult(true);
         }
     }

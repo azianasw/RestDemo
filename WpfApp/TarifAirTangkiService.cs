@@ -41,27 +41,27 @@ namespace WpfApp
                 .ToList();
         }
 
-        public async Task<List<Kategori>> GetKategoriAsync(string uri)
-        {
-            string json = await GetJsonResponse(uri);
-            return JsonConvert.DeserializeObject<List<Kategori>>(json);
-        }
-
         public async Task PostAsync(string uri, TarifAirTangki newTat)
         {
-            StringContent content = BuildStringContentFrom(newTat);
+            StringContent content = BuildStringContent(newTat);
             _ = await _client.PostAsync(uri, content);
         }
 
         public async Task PutAsync(string uri, TarifAirTangki updateTat)
         {
-            StringContent content = BuildStringContentFrom(updateTat);
+            StringContent content = BuildStringContent(updateTat);
             _ = await _client.PutAsync(uri, content);
         }
 
         public async Task DeleteAsync(string uri)
         {
-            await _client.DeleteAsync(uri);
+            _ = await _client.DeleteAsync(uri);
+        }
+
+        public async Task<List<Kategori>> GetKategoriAsync(string uri)
+        {
+            string json = await GetJsonResponse(uri);
+            return JsonConvert.DeserializeObject<List<Kategori>>(json);
         }
 
         private async Task<string> GetJsonResponse(string uri)
@@ -70,7 +70,7 @@ namespace WpfApp
             return await response.Content.ReadAsStringAsync();
         }
 
-        private StringContent BuildStringContentFrom(TarifAirTangki model)
+        private StringContent BuildStringContent(TarifAirTangki model)
         {
             return new StringContent(JsonConvert.SerializeObject(model), System.Text.Encoding.UTF8, "application/json");
         }

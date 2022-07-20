@@ -7,8 +7,6 @@ namespace WpfApp.ViewModels
 {
     public class TarifAirTangkiViewModel : ViewModelBase
     {
-        public IRestApi RestApi { get; set; }
-
         private List<TatViewModel> _tarifAirTangki;
         public List<TatViewModel> TarifAirTangki
         {
@@ -95,14 +93,12 @@ namespace WpfApp.ViewModels
         public ICommand KoreksiCommand { get; }
         public ICommand AturUlangFilterCommand { get; }
 
-        public TarifAirTangkiViewModel(IRestApi restApi)
+        public TarifAirTangkiViewModel(IRestApi restApi, INotification notification)
         {
-            RestApi = restApi;
-
-            RefreshCommand = new RefreshTarifAirTangkiCommand(this);
-            TambahCommand = new TambahTarifAirTangkiCommand(this);
-            HapusCommand = new HapusTarifAirTangkiCommand(this);
-            KoreksiCommand = new TambahTarifAirTangkiCommand(this);
+            RefreshCommand = new RefreshTarifAirTangkiCommand(this, restApi);
+            TambahCommand = new TambahTarifAirTangkiCommand(this, restApi);
+            HapusCommand = new HapusTarifAirTangkiCommand(this, restApi, notification);
+            KoreksiCommand = new TambahTarifAirTangkiCommand(this, restApi);
             AturUlangFilterCommand = new AturUlangFilterTarifAirTangkiCommand(this);
         }
 
