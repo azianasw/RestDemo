@@ -38,10 +38,9 @@ namespace WpfApp.ViewModels
         public ICommand DeleteCommand { get; }
         public SnackbarMessageQueue MessageQueue { get; set; }
 
-        public EmployeeListingViewModel(Store.NavigationStore navigationStore, Func<AddEmployeeViewModel> createAddEmployeeViewModel)
+        public EmployeeListingViewModel()
         {
             RefreshCommand = new RefreshEmployeeListingCommand(this);
-            AddCommand = new NavigateCommand(navigationStore, createAddEmployeeViewModel);
             UpdateCommand = new UpdateEmployeeListingCommand(this);
             DeleteCommand = new DeleteEmployeeListingCommand(this);
 

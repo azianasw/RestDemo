@@ -17,11 +17,7 @@ namespace WpfApp.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            await WebApi.DeleteAsync($"employees/{_employeeListingViewModel.Selected.Id}");
-            //if (resp.Result.StatusCode == System.Net.HttpStatusCode.OK)
-            //{
-            //    _employeeListingViewModel.MessageQueue.Enqueue($"{_employeeListingViewModel.Selected.Fullname}'s details has successfully been deleted!");
-            //}
+            _ = await Task.FromResult(false);
         }
     }
 }

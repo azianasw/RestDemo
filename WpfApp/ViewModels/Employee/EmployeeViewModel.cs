@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Input;
-using WpfApp.Commands;
+using WpfApp.Models;
 
 namespace WpfApp.ViewModels
 {
-    public class UpdateEmployeeViewModel : ViewModelBase
+    public class EmployeeViewModel : ViewModelBase
     {
         private readonly Employee _employee;
 
@@ -31,14 +30,9 @@ namespace WpfApp.ViewModels
             set => _employee.Position = value;
         }
 
-        public ICommand SaveCommand { get; }
-
-        public UpdateEmployeeViewModel(Employee employee)
+        public EmployeeViewModel(Employee employee)
         {
             _employee = employee;
-
-            SaveCommand = new SaveUpdateEmployeeCommand(this);
         }
-
     }
 }

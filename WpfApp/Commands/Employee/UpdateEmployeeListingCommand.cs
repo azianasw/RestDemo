@@ -17,13 +17,7 @@ namespace WpfApp.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            var employeeToUpdate = _employeeListingViewModel.Selected;
-            var resp = WebApi.PutAsync($"employees/{employeeToUpdate.Id}", employeeToUpdate);
-            if (resp.Result.StatusCode == System.Net.HttpStatusCode.NoContent)
-            {
-                _employeeListingViewModel.MessageQueue.Enqueue($"{employeeToUpdate.Fullname}'s details has successfully been updated!");
-            }
-            await Task.FromResult(true);
+            _ = await Task.FromResult(false);
         }
     }
 }

@@ -43,17 +43,11 @@ namespace WpfApp.ViewModels
         public ICommand CancelCommand { get; }
         public SnackbarMessageQueue MessageQueue { get; set; }
 
-        public AddEmployeeViewModel(Store.NavigationStore navigationStore, Func<EmployeeListingViewModel> createEmployeeListingViewModel)
-        {
-            SubmitCommand = new AddEmployeeCommand(this);
-            CancelCommand = new NavigateCommand(navigationStore, createEmployeeListingViewModel);
-
-            MessageQueue = new SnackbarMessageQueue();
-        }
-
         public AddEmployeeViewModel()
         {
             SubmitCommand = new AddEmployeeCommand(this);
+
+            MessageQueue = new SnackbarMessageQueue();
         }
     }
 }
